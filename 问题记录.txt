@@ -1,0 +1,4 @@
+2月3号:
+	1(未解决)：
+		同样创建Date的实例，为什么在WXML文件里面要用var date = getDate();
+在js文件里面要用var date = new Date();现已知在js文件里面用javascript的写法。是不是在WXML里用的是WX的写法？？

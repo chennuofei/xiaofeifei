@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.1",
 	"appid": "wx40f41dc06b160894",
-	"projectname": "test",
+	"projectname": "onedaytask",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

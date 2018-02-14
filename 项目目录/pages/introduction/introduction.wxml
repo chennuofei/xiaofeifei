@@ -1,0 +1,27 @@
+<!--pages/introduction/introduction.wxml-->
+ <view class="weui-article__h1">关于一天任务小程序</view>
+            <view class="weui-article__section">
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">简介</view>
+                    <view class="weui-article__p marg">
+                        一天任务小程序将每一天分成六个时间段（6：00-8：00；8：00-12：00；12：00-18：00；18：00-22：00；22：00-24：00；0：00-6：00），其中早上6点到晚上10点的四个时间段是四个任务时间段，该时间段打开小程序点进任务阶段会显示前一天晚上写下的该时间段的任务，若没填写则无数据。晚上10点到12点是每日总结时间，可以查看今天一天的四个任务和昨日总结，可以填写明天的四个任务和今日总结。小程序初始界面上方是一天时间的倒计时，红色代表剩余时间，意在以剩余时间的形式督促大家抓紧时间.
+                    </view>
+                    
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">说明</view>
+                    <view class="weui-article__p marg">
+                        一天任务小程序意在为大家规划自己每一天的工作学习提供帮助，如若有任何界面功能方面的建议以及发现任何bug,请与作者联系以便日后更新。
+                    </view>
+                </view>
+
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">联系方式</view>
+                    <view class="weui-article__p marg">
+                        邮件：weichatxiaochengxu@163.com
+                    </view>
+                    <view class='weui-article__p marg'>
+                         微信：c1099440827
+                    </view>
+                </view>
+            </view>

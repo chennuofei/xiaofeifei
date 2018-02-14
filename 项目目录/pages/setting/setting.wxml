@@ -1,0 +1,6 @@
+<view class="weui-cell weui-cell_access badgeborder" bindtap='introduction'>
+  <view class="weui-cell__bd" >
+    <view style="display: inline-block; vertical-align: middle" >小程序简介</view>
+  </view>
+  <view class="weui-cell__ft weui-cell__ft_in-access" ></view>
+</view>

@@ -1,0 +1,5 @@
+/* pages/introduction/introduction.wxss */
+.marg{
+  margin-left: 10px;
+  margin-right: 10px;
+}

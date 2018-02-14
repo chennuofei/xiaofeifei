@@ -1,0 +1,56 @@
+/**index.wxss**/
+page { 
+  width: 100%; 
+  height: 100%; 
+  background-color: #fff;
+ } 
+ 
+.circle-box { 
+   text-align: center;
+   margin-top: 10vw;
+  }
+
+.circle { 
+   position: absolute; 
+   left: 0; 
+   right: 0; 
+   margin: auto; } 
+.draw_btn { 
+  width: 35vw; 
+  position: absolute; 
+  top: 33vw; 
+  right: 0; 
+  left: 0; 
+  margin: auto; 
+  border: 1px #000 solid; 
+  border-radius: 5vw;
+  } 
+  .draw_text{
+  width: 35vw; 
+  position: absolute; 
+  top:25vw; 
+  right: 0; 
+  left: 0; 
+  margin: auto; 
+  /* border: 1px #000 solid; 
+  border-radius: 5vw; */
+  }
+
+ .button{
+  position: absolute;
+  height: 38px;
+  width: 70px;
+  top:78%;
+  text-align: center;
+  background-color: #383838;
+  color: white;
+  font-size: 16px;
+  border-radius: 15px;
+}
+
+.settingimage{
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  top: 91%;
+}

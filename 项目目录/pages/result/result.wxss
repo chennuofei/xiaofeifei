@@ -1,0 +1,50 @@
+/* pages/result/result.wxss */
+page,
+.page,
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    padding-top: 60px;
+    text-align: center;
+}
+
+.todoview{
+  margin: auto;
+  width: 85%;
+  font-size: 15px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+ display: -webkit-box;
+ word-break: break-all;
+ -webkit-box-orient: vertical;
+  color: whitesmoke;
+}
+.textarea1{
+   margin: auto;
+  width: 85%;
+  height: 85%;
+  font-size: 15px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+ display: -webkit-box;
+ word-break: break-all;
+ -webkit-box-orient: vertical;
+  color: whitesmoke;
+}
+
+.textarea2{
+   margin: auto;
+  width: 85%;
+  height: 85%;
+  font-size: 15px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+ display: -webkit-box;
+ word-break: break-all;
+ -webkit-box-orient: vertical;
+  color: whitesmoke;
+}

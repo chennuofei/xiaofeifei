@@ -1,0 +1,35 @@
+/* pages/needtodofordaytime/needtodofordaytime.wxss */
+
+
+.page{
+ /*使得子元素垂直居中*/
+ display:flex;
+ display: -webkit-flex;
+ align-items: center;
+}
+ .viewbymyself{
+  margin: auto;
+  width: 70%;
+  height: 250px;
+  background-color: #383838;
+  border-radius: 20px;
+ }
+.title{
+  padding-left:15px;
+  padding-right:15px; 
+  color:#999;
+  font-size:15px
+}
+ .needtodoview{
+    margin: auto;
+  width: 85%;
+  font-size: 17px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+ display: -webkit-box;
+ word-break: break-all;
+ -webkit-box-orient: vertical;
+  color: whitesmoke;
+   }
+
+

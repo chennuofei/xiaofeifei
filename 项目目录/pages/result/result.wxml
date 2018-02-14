@@ -1,0 +1,115 @@
+<!--pages/result/result.wxml-->
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'c' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                  <view class="weui-media-box weui-media-box_text viewbymyself1" >
+                    <view class="weui-cells__title">今日任务一</view>
+                    <scroll-view scroll-y="true" style='height:75px' class='todoview'>{{todo1}}</scroll-view>
+                  </view>
+                  <view class="weui-media-box weui-media-box_text viewbymyself1">
+                    <view class="weui-cells__title">今日任务二</view>
+                    <scroll-view scroll-y="true" style='height:75px' class='todoview'>{{todo2}}</scroll-view>
+                  </view>
+                  <view class="weui-media-box weui-media-box_text viewbymyself1">
+                    <view class="weui-cells__title">今日任务三</view>
+                    <scroll-view scroll-y="true" style='height:75px' class='todoview'>{{todo3}}</scroll-view>
+                  </view>
+                  <view class="weui-media-box weui-media-box_text viewbymyself1">
+                    <view class="weui-cells__title">今日任务四</view>
+                    <scroll-view scroll-y="true" style='height:75px' class='todoview'>{{todo4}}</scroll-view>
+                  </view>
+                  
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                  <view class='viewbymyself2'>
+                    <view class="weui-cells__title">今日总结</view>
+                    <view class=" weui-cells_after-title">
+                        <view class="weui-cell">
+                            <view class="weui-cell__bd">
+                                <textarea bindblur='summarize' class="textarea1" placeholder="请输入文本" style="height: 5.3em" />
+                                <!-- <view class="weui-textarea-counter">0/200</view> -->
+                            </view>
+                        </view>
+                    </view> 
+                  </view>
+                                    
+                  <view class="weui-media-box weui-media-box_text viewbymyself2-1">
+                    <view class="weui-cells__title">昨天总结</view>
+                    <scroll-view scroll-y="true" style='height:5.3em' class='todoview'>{{yesterdaysum}}</scroll-view>
+                  </view>
+
+                   <view class='article-sp-area3'>
+                        <text class='text1'>
+                        青春因奋斗而永驻心田     
+                        </text>
+                        <text class='text2'>
+                        让时光只能改变你的容颜
+                        </text>
+                    </view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                  <view class='viewbymyself3'>
+                  <view class="weui-cells__title">明日任务一</view>
+                  <view class="weui-cells_after-title">
+                      <view class="weui-cell">
+                          <view class="weui-cell__bd">
+                              <textarea bindblur='misson1' class="textarea2" placeholder="请输入文本" style="height: 3.3em" />
+                              <!-- <view class="weui-textarea-counter">0/200</view> -->
+                          </view>
+                      </view>
+                 
+                 
+                  </view>
+                  </view>
+                  
+                  <view class='viewbymyself3'>
+                  <view class="weui-cells__title">明日任务二</view>
+                  <view class="weui-cells_after-title">
+                      <view class="weui-cell">
+                          <view class="weui-cell__bd">
+                              <textarea bindblur='misson2' class="textarea2" placeholder="请输入文本" style="height: 3.3em" />
+                              <!-- <view class="weui-textarea-counter">0/200</view> -->
+                          </view>
+                      </view>
+                  </view>
+                  </view>
+
+                  <view class='viewbymyself3'>
+                  <view class="weui-cells__title">明日任务三</view>
+                  <view class="weui-cells_after-title">
+                      <view class="weui-cell">
+                          <view class="weui-cell__bd">
+                              <textarea bindblur='misson3' class="textarea2" placeholder="请输入文本" style="height: 3.3em" />
+                              <!-- <view class="weui-textarea-counter">0/200</view> -->
+                          </view>
+                      </view>
+                  </view>
+                  </view>
+
+                  <view class='viewbymyself3'>
+                  <view class="weui-cells__title">明日任务四</view>
+                  <view class="weui-cells_after-title">
+                      <view class="weui-cell">
+                          <view class="weui-cell__bd">
+                              <textarea bindblur='misson4' class="textarea2" placeholder="请输入文本" style="height: 3.3em" />
+                              <!-- <view class="weui-textarea-counter">0/200</view> -->
+                          </view>
+                      </view>
+                  </view>
+                  </view>
+                  
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

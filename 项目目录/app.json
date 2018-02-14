@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/needtodofordaytime/needtodofordaytime",
+    "pages/result/result",
+    "pages/sleep/sleep",
+    "pages/setting/setting",
+    "pages/introduction/introduction"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

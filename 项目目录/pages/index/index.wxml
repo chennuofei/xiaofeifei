@@ -1,0 +1,73 @@
+<!--index.wxml-->
+
+<wxs module="gettime">
+  var date = getDate();  
+  module.exports.time = date.getHours();
+</wxs>
+
+<view class='firstview'>
+<view>
+  <view class="wrap">
+   <view class="circle-box"> 
+    <canvas class="circle" style="z-index: -99; width:200px; height:200px;" canvas-id="canvasCircle"> 
+    </canvas> 
+    <canvas class="circle" style="width:200px; height:200px;" canvas-id="canvasArcCir"> 
+    </canvas>
+    <!--显示每天倒计时-->
+     <text class='draw_text'>今日份倒计时</text>
+     <view class="draw_btn">{{clock}}</view>
+   </view> 
+  </view>
+</view>
+ 
+<!--分割线-->
+
+<!--条件渲染-->
+<view class='button-sp-area'>
+  
+  <block wx:if="{{gettime.time>=22&&gettime.time<24}}">
+    <view class='article-sp-area1'>
+      <text class='text1'>
+      青春因奋斗而永驻心田     
+      </text>
+      <text class='text2'>
+      让时光只能改变你的容颜
+      </text>
+    </view>
+    <button class='button'  bindtap="toastzongjie">睡前</button>
+   
+  </block>
+
+  <block wx:elif="{{gettime.time>=0&&gettime.time<6}}">
+    <view class='article-sp-area1'>
+      <text class='text1'>
+      青春因奋斗而永驻心田     
+      </text>
+      <text class='text2'>
+      让时光只能改变你的容颜
+      </text>
+    </view>
+    <button class='button'  bindtap="toastsleep">晚安</button>
+   
+  </block>
+
+  <block wx:else>
+    <view class='article-sp-area1'>
+      <text class='text1'>
+      青春因奋斗而永驻心田     
+      </text>
+      <text class='text2'>
+      让时光只能改变你的容颜
+      </text>
+    </view>
+    <button class='button' bindtap="toastwhattodo">任务</button>
+   
+  </block>
+
+  <image class='settingimage' src='../../resources/setting2-32px.png' bindtap="toastsetting">
+
+  </image>
+
+</view>
+
+</view>

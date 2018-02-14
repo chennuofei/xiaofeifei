@@ -1,4 +1,3 @@
 # xiaofeifei
-mysingleday
 
-garbage for wechatxiaochengxu mysingleday
+项目目录文件是微信小程序开发的源文件，用微信小程序开发者工具打开即可。

@@ -1,0 +1,237 @@
+/**app.wxss**/
+
+@import "weui.wxss";
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.empty_tip{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;/*垂直居中*/
+  justify-content: center;/*水平居中*/
+}
+
+.firstview{
+   position: fixed;
+   width: 100%; 
+   height: 100%; 
+}
+
+
+/*给按钮父级组件view用的*/
+.button-sp-area{
+  margin: 0 auto;
+  padding-top: 15px;
+  width: 100%;
+  height: 100%;
+  /*使button居中*/
+  display: flex;
+  justify-content: center;
+}
+
+/*给按钮用的*/
+.button1{
+  position: absolute;
+  top:450px;
+  border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid;
+  background-color: #383838;
+  border-color: #454545;
+}
+
+.button2{
+  position: absolute;
+  top: 500px;
+}
+
+
+.button2{
+  position: absolute;
+  top: 550px;
+}
+
+
+
+/*给诗句view用的样式article*/
+
+.article-sp-area1{
+  position: absolute;
+  top:250px;
+  margin: 0 auto;
+  padding-top: 15px;
+  width: 100%;
+  height: 100%;
+  /*使text居中*/
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.article-sp-area2{
+  position: absolute;
+  top:25px;
+  margin: 0 auto;
+  padding-top: 10px;
+  width: 100%;
+  height: 50px;
+  /*使text居中*/
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.article-sp-area3{
+  position: absolute;
+  top:400px;
+  margin:0 auto;
+  padding-top: 15px;
+  width: 100%;
+  height: 50px;
+  /*使text居中*/
+  display: flex;
+  justify-content: center;
+}
+
+.text1{
+  position: absolute;
+  top:35px;
+}
+.text2{
+  position: absolute;
+  top:75px;
+}
+
+/*给页面三的输入文本框*/
+.firstview2{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /*使子元素居中*/
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.article{
+  position: absolute;
+  width: 80%;
+  height: 23%;
+  border-style: dashed;
+  border-width: 3px;
+  border-color: red;
+  /*使子元素居中*/
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.textarea{
+  position: absolute;
+  margin-top: 35px;
+  display: block;
+  width: 80%;
+  height: 55%;
+  border-style: solid;
+  border-width: thin;
+  border-color: rgb(95,95,0)
+}
+.text3{
+  position: absolute;
+  top: 5px;
+}
+.photoview{
+  position: absolute;
+  top: 25%;
+  width: 80%;
+  height: 40%;
+  border-style: dashed;
+  border-width: 3px;
+  border-color: red;
+  /*使子元素居中*/
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.photo{
+  position: absolute;
+  top: 15px;
+}
+/*给跳转按钮及其父级view*/
+.button_view{
+  position: absolute;
+  top: 70%;
+  width:80%;
+  height: 50%;
+  border-style: dashed;
+  border-width: 3px;
+  border-color: red;
+  /*使子元素居中*/
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.button3{
+  position: absolute;
+}
+.button4{
+  position: absolute;
+  top: 50px;
+}
+.canvas{
+  position: absolute;
+  top: 70px;
+}
+.image{
+  position: absolute;
+  top: 550px;
+}
+/*给result界面用的样式类*/
+.viewbymyself1{
+  margin: auto;
+  margin-top: 10px;
+   width: 80%;
+ 
+  background-color: #383838;
+   border-radius: 10px;
+}
+.viewbymyself2{
+  margin: auto;
+  margin-top: 10px;
+  width: 80%;
+  height: 150px;
+ 
+  background-color: #383838;
+   border-radius: 10px;
+}
+
+.viewbymyself2-1{
+  margin: auto;
+  margin-top:35px;
+  width: 80%;
+   height: 150px;
+  background-color: #383838;
+   border-radius: 10px;
+}
+
+.viewbymyself3{
+  margin: auto;
+  margin-top: 10px;
+  width: 80%;
+  height: 100px;
+  background-color: #383838;
+   border-radius: 10px;
+}
+
+
+

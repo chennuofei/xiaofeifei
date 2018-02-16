@@ -217,7 +217,7 @@
 
 .viewbymyself2-1{
   margin: auto;
-  margin-top:35px;
+  margin-top:25px;
   width: 80%;
    height: 150px;
   background-color: #383838;

@@ -48,3 +48,29 @@ page,
  -webkit-box-orient: vertical;
   color: whitesmoke;
 }
+.image1{
+  margin-top: 10px;
+  width: 32px;
+  height: 32px;
+}
+.imagesad{
+  width: 32px;
+  height: 32px;
+  margin-right: 20px;
+  }
+.imagegrin{
+  width: 32px;
+  height: 32px;
+}
+.imagesleeping{
+  width: 32px;
+  height: 32px;
+  margin-left: 20px;
+}
+.xuview{
+  position:relative;
+  margin-top: -300px;
+  margin-left: 100px;
+  }
+
+  

@@ -2,10 +2,10 @@
 <view class='page' style='width:{{screenWidth}}px;height:{{screenHeight}}px'>
 
   <view class='article-sp-area2'>
-      <text class='text1'>
+      <text class='textshuiju1'>
       青春因奋斗而永驻心田     
       </text>
-      <text class='text2'>
+      <text class='textshuiju2'>
       让时光只能改变你的容颜
       </text>
   </view>

@@ -1,5 +1,5 @@
 <!--pages/result/result.wxml-->
-<view class="page">
+<view class="page ">
     <view class="page__bd">
         <view class="weui-tab">
             <view class="weui-navbar">
@@ -10,7 +10,7 @@
                 </block>
                 <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
             </view>
-            <view class="weui-tab__panel">
+            <view class="weui-tab__panel" style='opacity:{{opa}}'>
                 <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
                   <view class="weui-media-box weui-media-box_text viewbymyself1" >
                     <view class="weui-cells__title">今日任务一</view>
@@ -30,7 +30,7 @@
                   </view>
                   
                 </view>
-                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}"  >
                   <view class='viewbymyself2'>
                     <view class="weui-cells__title">今日总结</view>
                     <view class=" weui-cells_after-title">
@@ -42,7 +42,9 @@
                         </view>
                     </view> 
                   </view>
-                                    
+
+                  <image class='image1' src='../../resources/emoticon_grin_32px.png' bindtap='chooseimage'></image>
+
                   <view class="weui-media-box weui-media-box_text viewbymyself2-1">
                     <view class="weui-cells__title">昨天总结</view>
                     <scroll-view scroll-y="true" style='height:5.3em' class='todoview'>{{yesterdaysum}}</scroll-view>
@@ -56,7 +58,13 @@
                         让时光只能改变你的容颜
                         </text>
                     </view>
+
+                  
+
                 </view>
+
+                 
+
                 <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
                   <view class='viewbymyself3'>
                   <view class="weui-cells__title">明日任务一</view>
@@ -113,3 +121,9 @@
         </view>
     </view>
 </view>
+ <view hidden='{{hideview}}' class='xuview'>
+
+                        <image class='imagesad' src="../../resources/emoticon_sad_32px.png"></image>
+                        <image class='imagegrin' src="../../resources/emoticon_grin_32px.png" animation="{{animationData}}" bindtap='choosegrin'></image>
+                        <image class='imagesleeping'src="../../resources/emoticon_sleeping_32px.png"></image>
+                  </view>

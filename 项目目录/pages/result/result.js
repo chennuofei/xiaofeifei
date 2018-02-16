@@ -33,6 +33,9 @@ Page({
     misson3:'',
     misson4:'',
     yesterdaysum:'',
+    hideview: true,
+    opa: 1,
+    animationData: {}
   },
 
   onLoad: function () {
@@ -342,4 +345,40 @@ Page({
       console.log('出了点问题');
     }
   },
+
+  /**
+   * 选择笑脸相关的函数
+   */
+
+  chooseimage: function () {
+    var that = this;
+    that.setData({
+      hideview: false,
+      opa: 0.5,
+    });
+  },
+  choosegrin: function () {
+    var that = this;
+    var animation = wx.createAnimation({
+
+    });
+    animation.translateY(30).step();
+    that.setData({
+      animationData: animation.export()
+    });
+    setTimeout(function () {
+      console.log("三秒后页面消失");
+      that.setData({
+        hideview: true,
+        opa: 1,
+      });
+      animation.translateY(0).step();
+      that.setData({
+        animationData: animation.export()
+      });
+
+    }, 3000)
+
+  },
+
 });

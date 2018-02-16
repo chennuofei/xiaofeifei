@@ -32,4 +32,12 @@
   color: whitesmoke;
    }
 
+.textshuiju1{
+  position: absolute;
+  top:20px;
+}
 
+.textshuiju2{
+  position: absolute;
+  top:60px;
+}

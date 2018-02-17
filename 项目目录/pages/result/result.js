@@ -35,7 +35,15 @@ Page({
     yesterdaysum:'',
     hideview: true,
     opa: 1,
-    animationData: {}
+    animationData: {},
+    back: '#FFFFFF',
+    aniationgrin:{},
+    animationsad:{},
+    animationsleeping:{},
+    emotiongrin:'../../resources/emoticon_grin_32px.png',
+    emotionsad: '../../resources/emoticon_sad_32px.png',
+    emotionsleeping: '../../resources/emoticon_sleeping_32px_grid.jpg',
+    yesterdayemotion:'',
   },
 
   onLoad: function () {
@@ -133,6 +141,36 @@ Page({
         //缓存没有数据，设置初始数据
         that.setData({
           yesterdaysum: '请在今晚的今日总结板块填写',
+        })
+      }
+    } catch (e) {
+
+    };
+
+    try {
+      //console.log(yesterday + 'emotion')
+      var value = wx.getStorageSync(yesterday+'emotion')
+      if (value) {
+        //缓存有数据，将数据显示
+       if(value=='sad'){
+         that.setData({
+           yesterdayemotion: '../../resources/emoticon_sad_32px.png',
+         })
+       }
+       if (value == 'sleeping') {
+         that.setData({
+           yesterdayemotion: '../../resources/emoticon_sleeping_32px.png',
+         })
+       }
+       if (value == 'grin') {
+         that.setData({
+           yesterdayemotion: '../../resources/emoticon_grin_32px.png',
+         })
+       }
+      } else {
+        //缓存没有数据，设置初始数据
+        that.setData({
+          yesterdayemotion: '../../resources/emoticon_grin_32px_grid.png',
         })
       }
     } catch (e) {
@@ -350,35 +388,136 @@ Page({
    * 选择笑脸相关的函数
    */
 
-  chooseimage: function () {
-    var that = this;
+readytochoose:function(){
+    var that  = this;
+    var animation1 = wx.createAnimation({
+
+    });
+    var animation2 = wx.createAnimation({
+
+    });
+    animation1.translateX(64).step();
+    animation2.translateX(-64).step();
     that.setData({
-      hideview: false,
-      opa: 0.5,
+        animationgrin: animation1.export(),
+        animationsad: animation2.export(),
+        emotionsleeping: '../../resources/emoticon_sleeping_32px.png',
     });
-  },
-  choosegrin: function () {
-    var that = this;
-    var animation = wx.createAnimation({
 
-    });
-    animation.translateY(30).step();
-    that.setData({
-      animationData: animation.export()
-    });
-    setTimeout(function () {
-      console.log("三秒后页面消失");
-      that.setData({
-        hideview: true,
-        opa: 1,
-      });
-      animation.translateY(0).step();
-      that.setData({
-        animationData: animation.export()
-      });
+},
 
-    }, 3000)
+choosegrin:function(){
+  var that = this;
+  /**
+   * 动画
+   */
+  var animation1 = wx.createAnimation({
 
-  },
+  });
+  var animation2 = wx.createAnimation({
 
+  });
+  var animation3 = wx.createAnimation({
+
+  });
+  animation1.translateX(64).scale(1.4).step();
+  animation1.scale(1).step();
+  animation2.translateX(-64).rotateY(180).step();
+  animation3.rotateY(180).step();
+  that.setData({
+    animationgrin: animation1.export(),
+    animationsad:animation2.export(),
+    animationsleeping:animation3.export(),
+    emotionsleeping: '../../resources/emoticon_sleeping_32px_grid.png',
+    emotionsad: '../../resources/emoticon_sad_32px_grid.png',
+  });
+
+  /**
+   * 把选择心情的信息存入缓存
+   */
+
+  try {
+    /**
+     * 用当前日期后加心情值作为存储心情的key值
+     */
+    console.log(currentdate);
+    console.log(currentdate +'emotion');
+    wx.setStorageSync(currentdate +'emotion', 'grin')
+    console.log('每日心情缓存完成');
+  } catch (e) {
+    console.log('每日心情缓存失败');
+  };
+},
+
+choosesad: function () {
+  var that = this;
+  var animation1 = wx.createAnimation({
+
+  });
+  var animation2 = wx.createAnimation({
+
+  });
+  var animation3 = wx.createAnimation({
+
+  });
+  animation1.translateX(64).rotateY(180).step();
+  animation2.translateX(-64).scale(1.4).step();
+  animation2.scale(1).step();
+  animation3.rotateY(180).step();
+  that.setData({
+    animationgrin: animation1.export(),
+    animationsad: animation2.export(),
+    animationsleeping: animation3.export(),
+    emotionsleeping: '../../resources/emoticon_sleeping_32px_grid.png',
+    emotiongrin: '../../resources/emoticon_grin_32px_grid.png',
+  });
+
+  try {
+    /**
+     * 用当前日期加心情值作为存储心情的key值
+     */
+    console.log(currentdate);
+    console.log(currentdate + 'emotion');
+    wx.setStorageSync(currentdate + 'emotion', 'sad')
+    console.log('每日心情缓存完成');
+  } catch (e) {
+    console.log('每日心情缓存失败');
+  };
+},
+
+choosesleeping: function () {
+  var that = this;
+  var animation1 = wx.createAnimation({
+
+  });
+  var animation2 = wx.createAnimation({
+
+  });
+  var animation3 = wx.createAnimation({
+
+  });
+  animation1.translateX(64).rotateY(180).step();
+  animation2.translateX(-64).rotateY(180).step();
+  animation3.scale(1.4).step();
+  animation3.scale(1).step();
+  that.setData({
+    animationgrin: animation1.export(),
+    animationsad: animation2.export(),
+    animationsleeping: animation3.export(),
+    emotionsad: '../../resources/emoticon_sad_32px_grid.png',
+    emotiongrin: '../../resources/emoticon_grin_32px_grid.png',
+  });
+  try {
+    /**
+     * 用当前日期加心情值作为存储心情的key值
+     */
+    console.log(currentdate);
+    console.log(currentdate + 'emotion');
+    wx.setStorageSync(currentdate + 'emotion', 'sleeping')
+    console.log('每日心情缓存完成');
+  } catch (e) {
+    console.log('每日心情缓存失败');
+  };
+},
+  
 });

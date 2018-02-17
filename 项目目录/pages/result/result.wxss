@@ -49,28 +49,54 @@ page,
   color: whitesmoke;
 }
 .image1{
+  position: static;
+ 
+  margin-top: 10px;
+   /*
+   往右移动32px
+  使得三个表情重叠
+  */
+  margin-right: -32px;
+  width: 32px;
+  height: 32px;
+
+}
+.image2{
+  position: static;
+ 
   margin-top: 10px;
   width: 32px;
   height: 32px;
+ 
 }
-.imagesad{
+.image3{
+  position: static;
+  
+  margin-top: 10px;
+  /*
+  往左移动32px
+  使得三个表情重叠
+  */
+  margin-left:-32px;
   width: 32px;
   height: 32px;
-  margin-right: 20px;
-  }
-.imagegrin{
-  width: 32px;
-  height: 32px;
+ 
 }
-.imagesleeping{
-  width: 32px;
-  height: 32px;
-  margin-left: 20px;
-}
+
 .xuview{
   position:relative;
-  margin-top: -300px;
-  margin-left: 100px;
+  margin-top: -450px;
+
+/*使得三个图形水平居中显示*/
+   text-align: center;
   }
 
-  
+
+.text1{
+  position: absolute;
+  top:-15px;
+}
+.text2{
+  position: absolute;
+  top:25px;
+}

@@ -430,6 +430,7 @@ choosegrin:function(){
     animationsleeping:animation3.export(),
     emotionsleeping: '../../resources/emoticon_sleeping_32px_grid.png',
     emotionsad: '../../resources/emoticon_sad_32px_grid.png',
+    emotiongrin: '../../resources/emoticon_grin_32px.png',
   });
 
   /**
@@ -470,6 +471,7 @@ choosesad: function () {
     animationsleeping: animation3.export(),
     emotionsleeping: '../../resources/emoticon_sleeping_32px_grid.png',
     emotiongrin: '../../resources/emoticon_grin_32px_grid.png',
+    emotionsad: '../../resources/emoticon_sad_32px.png',
   });
 
   try {
@@ -506,6 +508,7 @@ choosesleeping: function () {
     animationsleeping: animation3.export(),
     emotionsad: '../../resources/emoticon_sad_32px_grid.png',
     emotiongrin: '../../resources/emoticon_grin_32px_grid.png',
+    emotionsleeping: '../../resources/emoticon_sleeping_32px.png',
   });
   try {
     /**

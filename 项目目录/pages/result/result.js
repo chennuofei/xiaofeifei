@@ -1,7 +1,6 @@
 // pages/result/result.js
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 
-
 //获取当前日期，用作保存每日总结的key值
 var date = new Date();
 var seperator1 = "-";
@@ -27,7 +26,6 @@ Page({
     todo2: '',
     todo3: '',
     todo4: '',
-    test:'',
     misson1:'',
     misson2:'',
     misson3:'',
@@ -36,7 +34,6 @@ Page({
     hideview: true,
     opa: 1,
     animationData: {},
-    back: '#FFFFFF',
     aniationgrin:{},
     animationsad:{},
     animationsleeping:{},
@@ -45,6 +42,7 @@ Page({
     emotionsleeping: '../../resources/emoticon_sleeping_32px_grid.jpg',
     yesterdayemotion:'',
     jugeoneforready:1,
+    whethefirstbind:'yes',
   },
 
   onLoad: function () {
@@ -59,7 +57,6 @@ Page({
     });
 
     try {
-
       var value = wx.getStorageSync('misson1')
       if (value) {
         //缓存有数据，将数据显示在panel上
@@ -73,7 +70,6 @@ Page({
         })
       }
     } catch (e) {
-
     };
     
     try {
@@ -91,11 +87,9 @@ Page({
         })
       }
     } catch (e) {
-
     };
 
     try {
-
       var value = wx.getStorageSync('misson3')
       if (value) {
         //缓存有数据，将数据显示在panel上
@@ -109,11 +103,9 @@ Page({
         })
       }
     } catch (e) {
-
     };
 
     try {
-
       var value = wx.getStorageSync('misson4')
       if (value) {
         //缓存有数据，将数据显示在panel上
@@ -127,9 +119,7 @@ Page({
         })
       }
     } catch (e) {
-
     };
-
     try {
 
       var value = wx.getStorageSync(yesterday)
@@ -145,7 +135,6 @@ Page({
         })
       }
     } catch (e) {
-
     };
 
     try {
@@ -175,7 +164,6 @@ Page({
         })
       }
     } catch (e) {
-
     };
 
   },
@@ -185,7 +173,6 @@ Page({
       activeIndex: e.currentTarget.id
     });
   },
-
   //处理输入每日总结，把每日总结存入缓存中
 
   summarize:function(e){
@@ -201,14 +188,6 @@ Page({
 
   //处理每日任务，把每日四个任务存入缓存中
   misson1:function(e){
-      // var mission1 = e.detail.value;
-      // try{
-      //   wx.setStorageSync('mission1', mission1); 
-      //   console.log('misson1缓存完成');
-      // }catch(e){
-      //   console.log('misson1缓存失败');
-      // }
-
     var that = this;
     that.setData({
       misson1: e.detail.value
@@ -220,8 +199,6 @@ Page({
         key: 'misson1',
         data: that.data.misson1,
       });
-
-
       //测试缓存是否成功     
       console.log('测试缓存是否成功');
       wx.getStorage({
@@ -245,22 +222,6 @@ Page({
   },
 
   misson2: function (e) {
-    
-    // var mission2 = e.detail.value;
-    // console.log('misson2的值');
-    // console.log(miss2);
-    // try {
-    //   wx.setStorageSync('mission2', mission2);
-      
-    //   console.log('misson2缓存完成');
-
-    //   //测试缓存是否成功
-    //   var value = wx.getStorageSync('misson2');
-    //   console.log(value);
-    // } catch (e) {
-    //   console.log('misson2缓存失败');
-    // }
-
     var that = this;
     that.setData({
         misson2:e.detail.value
@@ -272,8 +233,6 @@ Page({
          key: 'misson2',
          data: that.data.misson2,
        });
-       
-
        //测试缓存是否成功     
        console.log('测试缓存是否成功');
        wx.getStorage({
@@ -298,14 +257,6 @@ Page({
   },
 
   misson3: function (e) {
-    // var mission3 = e.detail.value;
-    // try {
-    //   wx.setStorageSync('mission3', mission3);
-    //   console.log('misson3缓存完成');
-    // } catch (e) {
-    //   console.log('misson3缓存失败');
-    // }
-
     var that = this;
     that.setData({
       misson3: e.detail.value
@@ -317,8 +268,6 @@ Page({
         key: 'misson3',
         data: that.data.misson3,
       });
-
-
       //测试缓存是否成功     
       console.log('测试缓存是否成功');
       wx.getStorage({
@@ -342,14 +291,6 @@ Page({
   },
 
   misson4: function (e) {
-    // var mission4 = e.detail.value;
-    // try {
-    //   wx.setStorageSync('mission4', mission4);
-    //   console.log('misson4缓存完成');
-    // } catch (e) {
-    //   console.log('misson4缓存失败');
-    // }
-
     var that = this;
     that.setData({
       misson4: e.detail.value
@@ -361,8 +302,6 @@ Page({
         key: 'misson4',
         data: that.data.misson4,
       });
-
-
       //测试缓存是否成功     
       console.log('测试缓存是否成功');
       wx.getStorage({
@@ -394,10 +333,8 @@ readytochoose:function(){
     var that  = this;
     if (that.data.jugeoneforready==1){
       var animation1 = wx.createAnimation({
-
       });
       var animation2 = wx.createAnimation({
-
       });
       animation1.translateX(64).step();
       animation2.translateX(-64).step();
@@ -416,35 +353,71 @@ readytochoose:function(){
 
 choosegrin:function(){
   var that = this;
-  /**
-   * 动画
-   */
   var animation1 = wx.createAnimation({
-
   });
   var animation2 = wx.createAnimation({
-
   });
   var animation3 = wx.createAnimation({
-
-  });
-  animation1.translateX(64).scale(1.4).step();
-  animation1.scale(1).step();
-  animation2.translateX(-64).rotateY(180).step();
-  animation3.rotateY(180).step();
-  that.setData({
-    animationgrin: animation1.export(),
-    animationsad:animation2.export(),
-    animationsleeping:animation3.export(),
-    emotionsleeping: '../../resources/emoticon_sleeping_32px_grid.png',
-    emotionsad: '../../resources/emoticon_sad_32px_grid.png',
-    emotiongrin: '../../resources/emoticon_grin_32px.png',
   });
 
+  if (that.data.whethefirstbind=='yes'){
+    /**
+       * 动画
+       */
+    console.log(that.data.whethefirstbind);
+    animation1.translateX(64).scale(1.4).step();
+    animation1.scale(1).step();
+    animation2.translateX(-64).rotateY(180).step();
+    animation3.rotateY(180).step();
+    that.setData({
+      animationgrin: animation1.export(),
+      animationsad: animation2.export(),
+      animationsleeping: animation3.export(),
+      emotionsleeping: '../../resources/emoticon_sleeping_32px_grid.png',
+      emotionsad: '../../resources/emoticon_sad_32px_grid.png',
+      emotiongrin: '../../resources/emoticon_grin_32px.png',
+      whethefirstbind:'grin',
+    });
+  }else{
+    switch (that.data.whethefirstbind){
+        case 'grin':
+          animation1.translateX(64).scale(1.4).step();
+          animation1.scale(1).step();
+          that.setData({
+            animationgrin: animation1.export(),
+            whethefirstbind: 'grin',
+          });
+          break;
+        case 'sad':
+          animation1.translateX(64).scale(1.4).step();
+          animation1.scale(1).step();
+          that.setData({
+            animationgrin: animation1.export(),
+            emotionsad: '../../resources/emoticon_sad_32px_grid.png',
+            emotiongrin: '../../resources/emoticon_grin_32px.png',
+            whethefirstbind: 'grin',
+          });
+          break;  
+        case 'sleeping':
+          animation1.translateX(64).scale(1.4).step();
+          animation1.scale(1).step();
+          that.setData({
+            animationgrin: animation1.export(),
+            emotionsleeping: '../../resources/emoticon_sleeping_32px_grid.png',
+            emotiongrin: '../../resources/emoticon_grin_32px.png',
+            whethefirstbind: 'grin',
+          });
+          break;
+    }
+    that.setData({
+      animationgrin: {},
+      animationsad: {},
+      animationsleeping: {},
+    });
+  }
   /**
    * 把选择心情的信息存入缓存
    */
-
   try {
     /**
      * 用当前日期后加心情值作为存储心情的key值
@@ -461,27 +434,57 @@ choosegrin:function(){
 choosesad: function () {
   var that = this;
   var animation1 = wx.createAnimation({
-
   });
   var animation2 = wx.createAnimation({
-
   });
   var animation3 = wx.createAnimation({
-
   });
-  animation1.translateX(64).rotateY(180).step();
-  animation2.translateX(-64).scale(1.4).step();
-  animation2.scale(1).step();
-  animation3.rotateY(180).step();
-  that.setData({
-    animationgrin: animation1.export(),
-    animationsad: animation2.export(),
-    animationsleeping: animation3.export(),
-    emotionsleeping: '../../resources/emoticon_sleeping_32px_grid.png',
-    emotiongrin: '../../resources/emoticon_grin_32px_grid.png',
-    emotionsad: '../../resources/emoticon_sad_32px.png',
-  });
-
+  if (that.data.whethefirstbind == 'yes'){
+    animation1.translateX(64).rotateY(180).step();
+    animation2.translateX(-64).scale(1.4).step();
+    animation2.scale(1).step();
+    animation3.rotateY(180).step();
+    that.setData({
+      animationgrin: animation1.export(),
+      animationsad: animation2.export(),
+      animationsleeping: animation3.export(),
+      emotionsleeping: '../../resources/emoticon_sleeping_32px_grid.png',
+      emotiongrin: '../../resources/emoticon_grin_32px_grid.png',
+      emotionsad: '../../resources/emoticon_sad_32px.png',
+      whethefirstbind: 'sad',
+    });
+  }else{
+    switch (that.data.whethefirstbind){
+      case 'grin':
+        animation2.translateX(-64).scale(1.4).step();
+        animation2.scale(1).step();
+        that.setData({
+          animationsad: animation2.export(),
+          emotiongrin: '../../resources/emoticon_grin_32px_grid.png',
+          emotionsad: '../../resources/emoticon_sad_32px.png',
+          whethefirstbind:'sad',
+        });
+        break;
+      case 'sad':
+        animation2.translateX(-64).scale(1.4).step();
+        animation2.scale(1).step();
+        that.setData({
+          animationsad: animation2.export(),
+          whethefirstbind: 'sad',
+        });
+        break;
+      case 'sleeping':
+        animation2.translateX(-64).scale(1.4).step();
+        animation2.scale(1).step();
+        that.setData({
+          animationsad: animation2.export(),
+          emotionsleeping: '../../resources/emoticon_sleeping_32px_grid.png',
+          emotionsad: '../../resources/emoticon_sad_32px.png',
+          whethefirstbind: 'sad',
+        });
+        break;
+    }   
+  }
   try {
     /**
      * 用当前日期加心情值作为存储心情的key值
@@ -493,31 +496,67 @@ choosesad: function () {
   } catch (e) {
     console.log('每日心情缓存失败');
   };
+  that.setData({
+    animationgrin: {},
+    animationsad: {},
+    animationsleeping: {},
+  });
 },
 
 choosesleeping: function () {
   var that = this;
   var animation1 = wx.createAnimation({
-
   });
   var animation2 = wx.createAnimation({
-
   });
   var animation3 = wx.createAnimation({
+  });
 
-  });
-  animation1.translateX(64).rotateY(180).step();
-  animation2.translateX(-64).rotateY(180).step();
-  animation3.scale(1.4).step();
-  animation3.scale(1).step();
-  that.setData({
-    animationgrin: animation1.export(),
-    animationsad: animation2.export(),
-    animationsleeping: animation3.export(),
-    emotionsad: '../../resources/emoticon_sad_32px_grid.png',
-    emotiongrin: '../../resources/emoticon_grin_32px_grid.png',
-    emotionsleeping: '../../resources/emoticon_sleeping_32px.png',
-  });
+  if (that.data.whethefirstbind == 'yes') {
+    animation1.translateX(64).rotateY(180).step();
+    animation2.translateX(-64).rotateY(180).step();
+    animation3.scale(1.4).step();
+    animation3.scale(1).step();
+    that.setData({
+      animationgrin: animation1.export(),
+      animationsad: animation2.export(),
+      animationsleeping: animation3.export(),
+      emotionsad: '../../resources/emoticon_sad_32px_grid.png',
+      emotiongrin: '../../resources/emoticon_grin_32px_grid.png',
+      emotionsleeping: '../../resources/emoticon_sleeping_32px.png',
+      whethefirstbind: 'sleeping',
+    });
+  } else {
+    switch (that.data.whethefirstbind){
+      case 'grin':
+        animation3.scale(1.4).step();
+        animation3.scale(1).step();
+        that.setData({
+          animationsleeping: animation3.export(),
+          emotiongrin: '../../resources/emoticon_grin_32px_grid.png',
+          emotionsleeping: '../../resources/emoticon_sleeping_32px.png',
+          whethefirstbind: 'sleeping',
+        });
+        break;
+      case 'sad':
+        animation3.scale(1.4).step();
+        animation3.scale(1).step();
+        that.setData({
+          animationsleeping: animation3.export(),
+          emotionsad: '../../resources/emoticon_sad_32px_grid.png',
+          emotionsleeping: '../../resources/emoticon_sleeping_32px.png',
+          whethefirstbind: 'sleeping',
+        });
+        break;
+      case 'sleeping':
+        animation3.scale(1.4).step();
+        animation3.scale(1).step();
+        that.setData({
+          animationsleeping: animation3.export(),
+        });
+        break;
+    } 
+  } 
   try {
     /**
      * 用当前日期加心情值作为存储心情的key值
@@ -529,6 +568,11 @@ choosesleeping: function () {
   } catch (e) {
     console.log('每日心情缓存失败');
   };
+  that.setData({
+    animationgrin: {},
+    animationsad: {},
+    animationsleeping: {},
+  });
 },
   
 });

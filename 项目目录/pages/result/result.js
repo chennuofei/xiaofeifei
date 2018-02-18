@@ -44,6 +44,7 @@ Page({
     emotionsad: '../../resources/emoticon_sad_32px.png',
     emotionsleeping: '../../resources/emoticon_sleeping_32px_grid.jpg',
     yesterdayemotion:'',
+    jugeoneforready:1,
   },
 
   onLoad: function () {
@@ -389,20 +390,27 @@ Page({
    */
 
 readytochoose:function(){
+  //为了避免选择表情时不小心又单击sleeping导致出现两个表情亮，加入判断变量jugeoneforready
     var that  = this;
-    var animation1 = wx.createAnimation({
+    if (that.data.jugeoneforready==1){
+      var animation1 = wx.createAnimation({
 
-    });
-    var animation2 = wx.createAnimation({
+      });
+      var animation2 = wx.createAnimation({
 
-    });
-    animation1.translateX(64).step();
-    animation2.translateX(-64).step();
-    that.setData({
+      });
+      animation1.translateX(64).step();
+      animation2.translateX(-64).step();
+      that.setData({
         animationgrin: animation1.export(),
         animationsad: animation2.export(),
         emotionsleeping: '../../resources/emoticon_sleeping_32px.png',
-    });
+        jugeoneforready:2,
+      });
+    }else{
+      console.log('长按选择');
+    }
+   
 
 },
 

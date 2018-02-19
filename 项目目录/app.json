@@ -5,7 +5,8 @@
     "pages/result/result",
     "pages/sleep/sleep",
     "pages/setting/setting",
-    "pages/introduction/introduction"
+    "pages/introduction/introduction",
+    "pages/settime/settime"
   ],
   "window":{
     "backgroundTextStyle":"light",

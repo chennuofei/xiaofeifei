@@ -2,7 +2,7 @@
 
 <wxs module="gettime">
   var date = getDate();  
-  module.exports.time = 23;
+  module.exports.time =date.getHours();
 </wxs>
 
 <view class='firstview'>
@@ -25,7 +25,7 @@
 <!--条件渲染-->
 <view class='button-sp-area'>
   
-  <block wx:if="{{gettime.time>=22&&gettime.time<24}}">
+  <block wx:if="{{gettime.time>=globaltime&&gettime.time<24}}">
     <view class='article-sp-area1'>
       <text class='text1'>
       青春因奋斗而永驻心田     

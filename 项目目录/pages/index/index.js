@@ -145,7 +145,8 @@ Page({
    * 页面的初始数据
    */
   data: {   
-     clock:''   
+     clock:'',
+     globaltime:22,   
   },
   //圆形进度条所需函数
   drawCircle: function () {
@@ -203,7 +204,12 @@ Page({
     cxt_arc.draw();
 
     //画时间圈
-    this.drawCircle();
+    that.drawCircle();
+
+   //把全局变量传入用作页面显示判断条件
+    that.setData({
+      globaltime: getApp().globalData.globaltime5,
+    })
   }, 
 
   onLoad: function () {

@@ -3,4 +3,22 @@
     <view style="display: inline-block; vertical-align: middle" >小程序简介</view>
   </view>
   <view class="weui-cell__ft weui-cell__ft_in-access" ></view>
+  
 </view>
+
+<view class="weui-cell weui-cell_access badgeborder" bindtap='settime'>
+  <view class="weui-cell__bd" >
+    <view style="display: inline-block; vertical-align: middle" >时间段设置</view>
+  </view>
+  <view class="weui-cell__ft weui-cell__ft_in-access" ></view>
+  
+</view>
+
+<view class="weui-cell weui-cell_access badgeborder" >
+  <view class="weui-cell__bd" >
+    <view style="display: inline-block; vertical-align: middle" >清除缓存</view>
+  </view>
+  <switch  bindchange='free'></switch>
+  
+</view>
+

@@ -4,49 +4,58 @@
 var date = new Date();
 var hours = date.getHours();
 //var hours ='20';
-var key='';
-
-if(hours>=6&&hours<8){
-    key = 'misson1';
-}
-if (hours >= 8 && hours < 12) {
-  key = 'misson2';
-}
-if (hours >= 12 && hours < 18) {
-  key = 'misson3';
-}
-
-if (hours >= 18 && hours < 23) {
-  key = 'misson4';
-}
-
-
+var key = '';
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
       whattodo :'',
-
+      key:'',
+      globaltimethis2:8,
+      globaltimethis2: 18,
+      globaltimethis2: 22,
       screenHeight:'',
       screenWidth:'',
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
       var that = this;
+      // console.log('判断misson前');
+      // console.log(getApp().globalData.globaltime2);
+      that.setData({
+        globaltimethis2: getApp().globalData.globaltime2,
+        globaltimethis4: getApp().globalData.globaltime4,
+        globaltimethis5: getApp().globalData.globaltime5,
+      })
+      if (hours >= 6 && hours < that.data.globaltimethis2) {
+        key = 'misson1';
+        // console.log('hhhhmisson1');
+      }
+      if (hours >= that.data.globaltimethis2 && hours < 12) {
+        key = 'misson2';
+        // console.log('hhhhmisson2');
+      }
+      if (hours >= 12 && hours < that.data.globaltimethis4) {
+        key = 'misson3';
+        // console.log('hhhmisson3');
+      }
+
+      if (hours >= that.data.globaltimethis4 && hours <that.data.globaltimethis5) {
+        key = 'misson4';
+        // console.log('hhhhmisson4');
+      }
+
       //从缓存中获取todo数据如果没有设置空
       try{
       
         var value = wx.getStorageSync(key);
-        console.log('提取dyatime页面tido数据的key值');
-        console.log(key);
-        console.log('提取dyatime页面tido数据的value值');
-        console.log(value);
+        // console.log('提取dyatime页面tido数据的key值');
+        // console.log(key);
+        // console.log('提取dyatime页面tido数据的value值');
+        // console.log(value);
 
         if(value){
           //缓存有数据，将数据显示在panel上

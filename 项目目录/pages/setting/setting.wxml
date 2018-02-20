@@ -18,7 +18,7 @@
   <view class="weui-cell__bd" >
     <view style="display: inline-block; vertical-align: middle" >清除缓存</view>
   </view>
-  <switch  bindchange='free'></switch>
+  <switch  bindchange='free' type='switch' checked='{{witchchecked}}'></switch>
   
 </view>
 

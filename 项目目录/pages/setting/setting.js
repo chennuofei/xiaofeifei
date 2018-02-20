@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    witchchecked:false,
   },
 
   /**
@@ -75,20 +75,37 @@ Page({
   },
 
   free:function(){
-      try{
-        wx.clearStorageSync();
-        wx.showToast({
-          title: '缓存已清除',
-          icon:'success',
-          duration:1500,
-        })
-      }catch(e){
-        wx.showToast({
-          title: '请重试',
-          icon: 'loading',
-          duration: 1500,
-        })
+    var that = this;
+    wx.showModal({
+      title: '确定清除缓存吗？',
+      content: '确定清除缓存吗？',
+      success:function(res){
+        if(res.confirm){
+          try {
+            wx.clearStorageSync();
+            wx.showToast({
+              title: '缓存已清除',
+              icon: 'success',
+              duration: 1500,
+            })
+            that.setData({
+              witchchecked:true,
+            })
+          } catch (e) {
+            wx.showToast({
+              title: '请重试',
+              icon: 'loading',
+              duration: 1500,
+            })
+          }
+        }else if(res.cancel){
+          that.setData({
+            witchchecked: false,
+          })
+        }
       }
+    })
+      
   },
   
   settime: function () {

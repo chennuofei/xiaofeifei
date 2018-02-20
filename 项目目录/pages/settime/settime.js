@@ -28,11 +28,11 @@ Page({
 
 
     //目前版本允许调的时间点
-    time2:8,
+    time2:6,
     time4:18,
     time5:22,
     //滑动框中放入的是第几个值
-    value: [1, 1, 1],
+    value: [],
     
     //动画
     animationtime2:[],
@@ -40,6 +40,38 @@ Page({
     animationtime5:[],
     animationspecail:[],
   },
+
+  onLoad: function () {
+    //初始化time2/4/5和value
+    var that = this;
+   try{
+     var value2 = wx.getStorageSync('globaltime2');
+     var value4 = wx.getStorageSync('globaltime4');
+     var value5 = wx.getStorageSync('globaltime5');
+     var a = value2-7;
+     var b = value4-17;
+     var c = value5-21;
+     if(value2){
+        that.setData({
+          time2:value2,
+          time4:value4,
+          time5:value5,
+          value:[a,b,c]
+        })
+     }else{
+       //没有修改过时间的初始化time2/4/5和value
+        that.setData({
+          time2: 8,
+          time4: 18,
+          time5: 22,
+          value: [1, 1, 1],
+        })
+     }
+   }catch(e){
+
+   }
+  },
+
   bindChange: function (e) {
     var that = this;
     const val = e.detail.value;
@@ -94,13 +126,21 @@ Page({
       time5: that.data.time5s[val[2]],
     });
 
-    //改变全局变量
-    // console.log('改时间前');
-    // console.log(getApp().globalData.globaltime2);
-    getApp().globalData.globaltime2 = that.data.time2s[val[0]];
-    getApp().globalData.globaltime4 = that.data.time2s[val[1]];
-    getApp().globalData.globaltime5 = that.data.time2s[val[2]];
-    // console.log('改时间后');
-    // console.log(getApp().globalData.globaltime2);
+    // //改变全局变量
+    // // console.log('改时间前');
+    // // console.log(getApp().globalData.globaltime2);
+    // getApp().globalData.globaltime2 = that.data.time2s[val[0]];
+    // getApp().globalData.globaltime4 = that.data.time2s[val[1]];
+    // getApp().globalData.globaltime5 = that.data.time2s[val[2]];
+    // // console.log('改时间后');
+    // // console.log(getApp().globalData.globaltime2);
+
+    try{
+      wx.setStorageSync('globaltime2', that.data.time2);
+      wx.setStorageSync('globaltime4', that.data.time4);
+      wx.setStorageSync('globaltime5', that.data.time5);
+    }catch(e){
+      console.log('存储全局时间点信息出错');
+    }
   }
 })

@@ -23,13 +23,28 @@ Page({
    */
   onLoad: function (options) {
       var that = this;
-      // console.log('判断misson前');
-      // console.log(getApp().globalData.globaltime2);
-      that.setData({
-        globaltimethis2: getApp().globalData.globaltime2,
-        globaltimethis4: getApp().globalData.globaltime4,
-        globaltimethis5: getApp().globalData.globaltime5,
-      })
+      // // console.log('判断misson前');
+      // // console.log(getApp().globalData.globaltime2);
+      // that.setData({
+      //   globaltimethis2: getApp().globalData.globaltime2,
+      //   globaltimethis4: getApp().globalData.globaltime4,
+      //   globaltimethis5: getApp().globalData.globaltime5,
+      // })
+
+      try{
+          var value2 = wx.getStorageSync('globaltime2');
+          var value4 = wx.getStorageSync('globaltime4');
+          var value5 = wx.getStorageSync('globaltime5');
+          that.setData({
+            globaltimethis2: value2,
+            globaltimethis4: value4,
+            globaltimethis5: value5,
+          })
+
+      }catch(e){
+
+      }
+
       if (hours >= 6 && hours < that.data.globaltimethis2) {
         key = 'misson1';
         // console.log('hhhhmisson1');

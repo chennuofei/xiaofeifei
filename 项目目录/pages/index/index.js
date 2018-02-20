@@ -206,12 +206,22 @@ Page({
     //画时间圈
     that.drawCircle();
 
-   //把全局变量传入用作页面显示判断条件
-    that.setData({
-      globaltime: getApp().globalData.globaltime5,
-    })
-  }, 
+  //  //把全局变量传入用作页面显示判断条件
+  //   that.setData({
+  //     globaltime: getApp().globalData.globaltime5,
+  //   })
+  
+    try{
+     var value = wx.getStorageSync('globaltime5');
+     if(value){
+       that.setData({
+            globaltime: value,
+      })
+     }
+    }catch(e){
 
+    }
+  },
   onLoad: function () {
     countdown(this);
   },

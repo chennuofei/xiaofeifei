@@ -1,6 +1,5 @@
 <!--pages/sleep/sleep.wxml-->
 <view class='page' style='width:{{screenWidth}}px;height:{{screenHeight}}px'>
-
   <view class='article-sp-area2'>
       <text class='text1'>
       夜深了，睡去吧    
@@ -9,5 +8,4 @@
       愿你好梦
       </text>
   </view>
-
 </view>

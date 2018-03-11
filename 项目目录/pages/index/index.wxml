@@ -2,7 +2,7 @@
 
 <wxs module="gettime">
   var date = getDate();  
-  module.exports.time =date.getHours();
+  module.exports.time =23;
 </wxs>
 
 <view class='firstview'>

@@ -16,6 +16,9 @@ if (strDate >= 0 && strDate <= 9) {
 var currentdate = year + seperator1 + month + seperator1 + strDate;
 var yesterday = year + seperator1 + month + seperator1 + (strDate-1);
 
+
+
+
 Page({
   data: {
     tabs: ["任务", "总结", "安排"],
@@ -47,6 +50,32 @@ Page({
 
   onLoad: function () {
     var that = this;
+
+    /**
+     * 页面初始化时表情动画,因为用了setdata所以不把它封装到onLoad外面
+     */
+    try{
+      var animation1 = wx.createAnimation({
+        delay: 600,
+        timingFunction: "ease-in-out",
+        duration:1200,
+      });
+      var animation2 = wx.createAnimation({
+        delay: 600,
+        timingFunction: "ease-in-out",
+        duration: 1200,
+      });
+      animation1.translateX(64).step();
+      animation2.translateX(-64).step();
+      that.setData({
+        animationgrin: animation1.export(),
+        animationsad: animation2.export(),
+        emotionsleeping: '../../resources/emoticon_sleeping_32px.png',
+        jugeoneforready: 2,
+      });
+    }catch(e){
+
+    };
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
@@ -57,7 +86,11 @@ Page({
     });
 
     try {
-      var value = wx.getStorageSync('misson1')
+      /**
+        * key值为yesterday加前缀misson1
+        */
+      var keyforyesterdaymisson1 = "misson2" + yesterday;
+      var value = wx.getStorageSync(keyforyesterdaymisson1);
       if (value) {
         //缓存有数据，将数据显示在panel上
         that.setData({
@@ -73,8 +106,11 @@ Page({
     };
     
     try {
-
-      var value = wx.getStorageSync('misson2')
+      /**
+        * key值为yesterday加前缀misson2
+        */
+      var keyforyesterdaymisson2 = "misson2" + yesterday;
+      var value = wx.getStorageSync(keyforyesterdaymisson2);
       if (value) {
         //缓存有数据，将数据显示在panel上
         that.setData({
@@ -90,7 +126,11 @@ Page({
     };
 
     try {
-      var value = wx.getStorageSync('misson3')
+      /**
+       * key值为yesterday加前缀misson3
+       */
+      var keyforyesterdaymisson3 = "misson3" + yesterday;
+      var value = wx.getStorageSync(keyforyesterdaymisson3);
       if (value) {
         //缓存有数据，将数据显示在panel上
         that.setData({
@@ -106,7 +146,11 @@ Page({
     };
 
     try {
-      var value = wx.getStorageSync('misson4')
+      /**
+      * key值为yesterday加前缀misson4
+      */
+      var keyforyesterdaymisson4 = "misson4" + yesterday;
+      var value = wx.getStorageSync(keyforyesterdaymisson4);
       if (value) {
         //缓存有数据，将数据显示在panel上
         that.setData({
@@ -121,7 +165,10 @@ Page({
     } catch (e) {
     };
     try {
-
+      /**
+           * key值为yesterday加前缀summarize
+           */
+      var keyforyesterdaysummarize = "summarize" + yesterday;
       var value = wx.getStorageSync(yesterday)
       if (value) {
         //缓存有数据，将数据显示在panel上
@@ -176,10 +223,22 @@ Page({
   //处理输入每日总结，把每日总结存入缓存中
 
   summarize:function(e){
+    var that  = this;
       var onedaysum =e.detail.value;
+      var keyforsummarize = "summarize"+currentdate;
+     // console.log(keyforsummarize);
       try{
-        wx.setStorageSync(currentdate, onedaysum)
+        /**
+         * key值为currentdate加前缀summarize
+         */
+        wx.setStorageSync(keyforsummarize, onedaysum)
         console.log('每日总结缓存完成');
+
+        /**
+         * 用于缓存中挑选有记录的日期key值
+         */
+        var keyforcurrentdate = 'key' + currentdate;
+        wx.setStorageSync(keyforcurrentdate, currentdate)
       }catch(e){
         console.log('每日总结缓存失败');
       }
@@ -194,15 +253,19 @@ Page({
     });
     console.log('misson1的值');
     console.log(that.data.misson1);
+    /**
+         * key值为currentdate加前缀misson1
+         */
+    var keyformisson1 = "misson1" + currentdate;
     try {
       wx.setStorage({
-        key: 'misson1',
+        key: keyformisson1,
         data: that.data.misson1,
       });
       //测试缓存是否成功     
       console.log('测试缓存是否成功');
       wx.getStorage({
-        key: 'misson1',
+        key: keyformisson1,
         success: function (res) {
           console.log(res.data)
           that.setData({
@@ -223,20 +286,25 @@ Page({
 
   misson2: function (e) {
     var that = this;
+   
     that.setData({
         misson2:e.detail.value
     });
      console.log('misson2的值');
      console.log(that.data.misson2);
+     /**
+         * key值为currentdate加前缀misson2
+         */
+     var keyformisson2 = "misson2" + currentdate;
      try{
        wx.setStorage({
-         key: 'misson2',
+         key: keyformisson2 ,
          data: that.data.misson2,
        });
        //测试缓存是否成功     
        console.log('测试缓存是否成功');
        wx.getStorage({
-         key: 'misson2',
+         key: keyformisson2,
          success: function(res) {
            console.log(res.data)
             that.setData({
@@ -263,15 +331,19 @@ Page({
     });
     console.log('misson3的值');
     console.log(that.data.misson3);
+    /**
+         * key值为currentdate加前缀misson3
+         */
+    var keyformisson3 = "misson3" + currentdate;
     try {
       wx.setStorage({
-        key: 'misson3',
+        key: keyformisson3,
         data: that.data.misson3,
       });
       //测试缓存是否成功     
       console.log('测试缓存是否成功');
       wx.getStorage({
-        key: 'misson3',
+        key: keyformisson3,
         success: function (res) {
           console.log(res.data)
           that.setData({
@@ -297,15 +369,19 @@ Page({
     });
     console.log('misson4的值');
     console.log(that.data.misson4);
+    /**
+         * key值为currentdate加前缀misson4
+         */
+    var keyformisson4 = "misson4" + currentdate;
     try {
       wx.setStorage({
-        key: 'misson4',
+        key: keyformisson4,
         data: that.data.misson4,
       });
       //测试缓存是否成功     
       console.log('测试缓存是否成功');
       wx.getStorage({
-        key: 'misson4',
+        key: keyformisson4,
         success: function (res) {
           console.log(res.data)
           that.setData({
@@ -328,28 +404,7 @@ Page({
    * 选择笑脸相关的函数
    */
 
-readytochoose:function(){
-  //为了避免选择表情时不小心又单击sleeping导致出现两个表情亮，加入判断变量jugeoneforready
-    var that  = this;
-    if (that.data.jugeoneforready==1){
-      var animation1 = wx.createAnimation({
-      });
-      var animation2 = wx.createAnimation({
-      });
-      animation1.translateX(64).step();
-      animation2.translateX(-64).step();
-      that.setData({
-        animationgrin: animation1.export(),
-        animationsad: animation2.export(),
-        emotionsleeping: '../../resources/emoticon_sleeping_32px.png',
-        jugeoneforready:2,
-      });
-    }else{
-      console.log('长按选择');
-    }
-   
 
-},
 
 choosegrin:function(){
   var that = this;

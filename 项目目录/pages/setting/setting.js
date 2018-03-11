@@ -6,13 +6,30 @@ Page({
    */
   data: {
     witchchecked:false,
+    huancun:0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    /**
+     * 获取已有缓存大小
+     */
+    try{
+      wx.getStorageInfo({
+        success: function (res) {
+          //console.log(res.currentSize)
+          var huancunMB = res.currentSize / 1024 - 0.0009765625;
+          that.setData({
+            huancun: huancunMB,
+          });
+        }
+      })
+    }catch(e){
 
+    }
   },
 
   /**
@@ -78,7 +95,7 @@ Page({
     var that = this;
     wx.showModal({
       title: '确定清除缓存吗？',
-      content: '确定清除缓存吗？',
+      content: '这会清除所有的数据',
       success:function(res){
         if(res.confirm){
           try {
@@ -104,13 +121,31 @@ Page({
           })
         }
       }
-    })
+    });
+
+    try {
+      wx.getStorageInfo({
+        success: function (res) {
+         // console.log(res.currentSize)
+          var huancunMB = res.currentSize/1024-0.0009765625;
+          that.setData({
+            huancun: huancunMB,
+          });
+        }
+      })
+    } catch (e) {
+    };
       
   },
   
   settime: function () {
     wx.navigateTo({
       url: '../../pages/settime/settime',
+    })
+  },
+  history:function(){
+    wx.navigateTo({
+      url: '../../pages/history/history',
     })
   },
 })

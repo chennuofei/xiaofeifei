@@ -1,0 +1,21 @@
+/* pages/history/history.wxss */
+.weui-grids{
+  
+  overflow:hidden
+  }
+  .weui-grid{
+    border-radius:50%;
+    margin-left: 3.33333333%;
+    margin-right: 3.33333333%;
+    margin-top: 3.33333333%;
+    position:relative;
+    float:left;
+    padding:20px 10px;
+    width:26.66666666%;
+    box-sizing:border-box;
+    background-color: #383838;
+    }
+
+.wenzi{
+  color: white;
+}

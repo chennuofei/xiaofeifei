@@ -14,11 +14,20 @@
   
 </view>
 
-<view class="weui-cell weui-cell_access badgeborder" >
+<view class="weui-cell weui-cell_access badgeborder" bindtap='free'>
   <view class="weui-cell__bd" >
     <view style="display: inline-block; vertical-align: middle" >清除缓存</view>
   </view>
-  <switch  bindchange='free' type='switch' checked='{{witchchecked}}'></switch>
+  <view class="weui-cell__ft"  >{{huancun}}MB</view>
+  
+</view>
+
+
+<view class="weui-cell weui-cell_access badgeborder" bindtap='history'>
+  <view class="weui-cell__bd" >
+    <view style="display: inline-block; vertical-align: middle" >以前的日子</view>
+  </view>
+   <view class="weui-cell__ft weui-cell__ft_in-access" ></view>
   
 </view>
 

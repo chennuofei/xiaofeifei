@@ -6,7 +6,9 @@
     "pages/sleep/sleep",
     "pages/setting/setting",
     "pages/introduction/introduction",
-    "pages/settime/settime"
+    "pages/settime/settime",
+    "pages/history/history",
+    "pages/oneday/oneday"
   ],
   "window":{
     "backgroundTextStyle":"light",

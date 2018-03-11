@@ -1,0 +1,17 @@
+<!--pages/history/history.wxml-->
+<view class="page">
+    
+    <view class="page__bd " >
+        <view class="weui-grids ">
+            <block wx:for="{{alldays}}" wx:for-item="oneday"wx:key="*this">
+                <navigator url="../../pages/oneday/oneday?key={{oneday}}" class="weui-grid" hover-class="weui-grid_active">
+                    <image wx:if="{{oneday[1]=='sad'}}" class="weui-grid__icon" src="../../resources/emoticon_sad_32px.png" />
+                    <image wx:if="{{oneday[1]=='sleeping'}}" class="weui-grid__icon" src="../../resources/emoticon_sleeping_32px.png" />
+                    <image wx:if="{{oneday[1]=='grin'}}" class="weui-grid__icon" src="../../resources/emoticon_grin_32px.png" />
+                    <image wx:if="{{oneday[1]=='grid'}}" class="weui-grid__icon" src="../../resources/emoticon_grin_32px_grid.png" />
+                    <view class="weui-grid__label wenzi" >{{oneday[0]}}</view>
+                </navigator>
+            </block>
+        </view>
+    </view>
+</view>

@@ -22,6 +22,8 @@ Page({
         success: function (res) {
           //console.log(res.currentSize)
           var huancunMB = res.currentSize / 1024 - 0.0009765625;
+          if(huancunMB<0)
+            huancunMB=0;
           that.setData({
             huancun: huancunMB,
           });
@@ -128,6 +130,8 @@ Page({
         success: function (res) {
          // console.log(res.currentSize)
           var huancunMB = res.currentSize/1024-0.0009765625;
+          if (huancunMB < 0)
+            huancunMB = 0;
           that.setData({
             huancun: huancunMB,
           });

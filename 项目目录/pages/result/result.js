@@ -21,7 +21,7 @@ var yesterday = year + seperator1 + month + seperator1 + (strDate-1);
 
 Page({
   data: {
-    tabs: ["任务", "总结", "安排"],
+    tabs: ["今日任务", "总结", "明日安排"],
     activeIndex: 1,
     sliderOffset: 0,
     sliderLeft: 0,
@@ -40,6 +40,7 @@ Page({
     aniationgrin:{},
     animationsad:{},
     animationsleeping:{},
+    animationjinrizongjie:{},
     emotiongrin:'../../resources/emoticon_grin_32px.png',
     emotionsad: '../../resources/emoticon_sad_32px.png',
     emotionsleeping: '../../resources/emoticon_sleeping_32px_grid.jpg',
@@ -76,6 +77,26 @@ Page({
     }catch(e){
 
     };
+
+    /**
+     * 初始化时今日总结框的动画
+     */
+
+    try{
+      var animationzongjie1 = wx.createAnimation({
+        duration:1200,
+        timingFunction:"ease-out",
+      });
+      animationzongjie1.scale(1.08).step();
+      animationzongjie1.scale(1.0).step();
+      that.setData({
+        animationjinrizongjie: animationzongjie1.export(),
+      });
+    }catch(e){
+
+    };
+
+
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
@@ -98,9 +119,7 @@ Page({
         })
       } else {
         //缓存没有数据，设置初始数据
-        that.setData({
-          todo1: '请在今晚的明日计划板块填写明天的任务',
-        })
+       
       }
     } catch (e) {
     };
@@ -118,9 +137,7 @@ Page({
         })
       } else {
         //缓存没有数据，设置初始数据
-        that.setData({
-          todo2: '请在今晚的明日计划板块填写明天的任务',
-        })
+       
       }
     } catch (e) {
     };
@@ -138,9 +155,7 @@ Page({
         })
       } else {
         //缓存没有数据，设置初始数据
-        that.setData({
-          todo3: '请在今晚的明日计划板块填写明天的任务',
-        })
+       
       }
     } catch (e) {
     };
@@ -158,9 +173,7 @@ Page({
         })
       } else {
         //缓存没有数据，设置初始数据
-        that.setData({
-          todo4: '请在今晚的明日计划板块填写明天的任务',
-        })
+       
       }
     } catch (e) {
     };
@@ -177,9 +190,7 @@ Page({
         })
       } else {
         //缓存没有数据，设置初始数据
-        that.setData({
-          yesterdaysum: '请在今晚的今日总结板块填写',
-        })
+       
       }
     } catch (e) {
     };
@@ -212,6 +223,10 @@ Page({
       }
     } catch (e) {
     };
+
+
+
+
 
   },
   tabClick: function (e) {

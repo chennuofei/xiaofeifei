@@ -172,7 +172,7 @@ Page({
     }else{
       endAngle = (x+1.5-2) * Math.PI;
     }
-    var animation_interval = 1000, n = 24*60*60;
+    var animation_interval = 60000, n = 24*60*60;
   
     var animation = function () {
       if (step <= n) {
@@ -185,7 +185,8 @@ Page({
         clearInterval(varName);
       }
     };
-    //定时一秒刷新一次,这功能有点晃眼睛
+    //定时一分钟刷新一次,有点鸡肋，可以考虑删除这功能有点晃眼睛 setInterval是一个实现定时调用的函数，可按照指定的周期（以毫秒计）来调用函数或计算表达式。setInterval方法会不停地调用函数，直到 clearInterval被调用或窗口被关闭。
+    animation();//初始状态调用一个否则要等到animation_interval = 60000ms后菜画第一个圈
     varName = setInterval(animation, animation_interval);
   }, 
   /**
@@ -196,7 +197,7 @@ Page({
     //创建并返回绘图上下文context对象。 
     var cxt_arc = wx.createCanvasContext('canvasCircle');
     cxt_arc.setLineWidth(8); //设置线条宽度
-    cxt_arc.setStrokeStyle('#ff0000');//设置边框颜色
+    cxt_arc.setStrokeStyle('#993333');//设置边框颜色;//设置边框颜色
     cxt_arc.setLineCap('round');//设置线条的端点样式
     cxt_arc.beginPath();//开始创建一个路径，需要调用fill或者stroke才会使用路径进行填充或者描边
     cxt_arc.arc(100, 100, 96, 0, 2 * Math.PI, false);

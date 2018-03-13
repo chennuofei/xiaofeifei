@@ -1,5 +1,5 @@
 
-<view class='page' style='width:{{screenWidth}}px;height:{{screenHeight}}px'>
+<view class='page' style='width:{{screenWidth}}px;height:{{screenHeight}}px;background:url("https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af611c47b827d67c95ce012231e8d02f&auto=format&fit=crop&w=500&q=60");-webkit-background-size:cover;'>
 
   <view class='article-sp-area2'>
       <text class='textshuiju1'>
@@ -10,7 +10,7 @@
       </text>
   </view>
 
-  <view class=" viewbymyself" >
+  <view class="viewbymyself" >
     <text class='title'>任务</text>
     <scroll-view scroll-y="true" style='height:200px' class='needtodoview'>{{whattodo}}</scroll-view>
   </view>

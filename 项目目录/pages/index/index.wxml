@@ -2,19 +2,19 @@
 
 <wxs module="gettime">
   var date = getDate();  
-  module.exports.time =date.getHours();
+  module.exports.time =23;
 </wxs>
 
-<view class='firstview'>
+<view class='firstview ' style='background:url("https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af611c47b827d67c95ce012231e8d02f&auto=format&fit=crop&w=500&q=60");-webkit-background-size:cover;'>
 <view>
   <view class="wrap">
    <view class="circle-box"> 
-    <canvas class="circle" style="z-index: -99; width:200px; height:200px;" canvas-id="canvasCircle"> 
+    <canvas class="circle" style="z-index: -99; width:200px; height:200px;" canvas-id="canvasCircle" > 
     </canvas> 
-    <canvas class="circle" style="width:200px; height:200px;" canvas-id="canvasArcCir"> 
+    <canvas class="circle" style="width:200px; height:200px; " canvas-id="canvasArcCir" > 
     </canvas>
     <!--显示每天倒计时-->
-     <text class='draw_text'>今日份倒计时</text>
+     <text class='draw_text' >今日份倒计时</text>
      <view class="draw_btn">{{clock}}</view>
    </view> 
   </view>
@@ -26,8 +26,8 @@
 <view class='button-sp-area'>
   
   <block wx:if="{{gettime.time>=globaltime&&gettime.time<24}}">
-    <view class='article-sp-area1'>
-      <text class='text1'>
+    <view class='article-sp-area1 '>
+      <text class='text1 ' >
       青春因奋斗而永驻心田     
       </text>
       <text class='text2'>
@@ -40,10 +40,10 @@
 
   <block wx:elif="{{gettime.time>=0&&gettime.time<6}}">
     <view class='article-sp-area1'>
-      <text class='text1'>
+      <text class='text1 ' >
       青春因奋斗而永驻心田     
       </text>
-      <text class='text2'>
+      <text class='text2 ' >
       让时光只能改变你的容颜
       </text>
     </view>
@@ -52,11 +52,11 @@
   </block>
 
   <block wx:else>
-    <view class='article-sp-area1'>
-      <text class='text1'>
+    <view class='article-sp-area1 '>
+      <text class='text1 ' >
       青春因奋斗而永驻心田     
       </text>
-      <text class='text2'>
+      <text class='text2 ' >
       让时光只能改变你的容颜
       </text>
     </view>

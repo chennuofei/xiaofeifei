@@ -8,8 +8,14 @@ page,
     padding-bottom: 0;
 }
 .weui-tab__content{
+  /*s
+  这里height: 92%;使得三个页面允许上下轻微滑动
+  */
+  height: 92%;
+  width: 100%;
     padding-top: 60px;
     text-align: center;
+  
 }
 
 .todoview{
@@ -47,6 +53,7 @@ page,
  word-break: break-all;
  -webkit-box-orient: vertical;
   color: whitesmoke;
+  
 }
 .image1{
   position: static;
@@ -63,15 +70,12 @@ page,
 }
 .image2{
   position: static;
- 
   margin-top: 10px;
   width: 32px;
   height: 32px;
- 
 }
 .image3{
   position: static;
-  
   margin-top: 10px;
   /*
   往左移动32px
@@ -80,7 +84,6 @@ page,
   margin-left:-32px;
   width: 32px;
   height: 32px;
- 
 }
 
 .xuview{
@@ -94,9 +97,16 @@ page,
 
 .text1{
   position: absolute;
-  top:-15px;
+  top:-20px;
+  opacity: 0.5;
+  font-style: italic;
 }
 .text2{
   position: absolute;
-  top:25px;
+  top:15px;
+  opacity: 0.5;
+  font-style: italic;
+}
+.slider{
+  border-radius:50px 50px 0 0;
 }

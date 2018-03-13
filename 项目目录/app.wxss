@@ -102,14 +102,7 @@
   justify-content: center;
 }
 
-.text1{
-  position: absolute;
-  top:35px;
-}
-.text2{
-  position: absolute;
-  top:75px;
-}
+
 
 /*给页面三的输入文本框*/
 .firstview2{
@@ -197,37 +190,40 @@
 .viewbymyself1{
   margin: auto;
   margin-top: 10px;
-   width: 80%;
- 
+  width: 75%;
+  height: 20%;
   background-color: #383838;
    border-radius: 10px;
+   opacity: 0.7;
 }
 .viewbymyself2{
   margin: auto;
   margin-top: 10px;
-  width: 80%;
-  height: 150px;
- 
+  width:75%;
+  height: 30%;
   background-color: #383838;
    border-radius: 10px;
+   opacity: 0.7;
 }
 
 .viewbymyself2-1{
   margin: auto;
   margin-top:13px;
-  width: 80%;
-   height: 150px;
+  width: 75%;
+   height: 30%;
   background-color: #383838;
    border-radius: 10px;
+   opacity: 0.7;
 }
 
 .viewbymyself3{
   margin: auto;
   margin-top: 10px;
-  width: 80%;
-  height: 100px;
+  width:75%;
+  height: 20%;
   background-color: #383838;
    border-radius: 10px;
+   opacity: 0.7;
 }
 
 

@@ -16,6 +16,9 @@ Page({
     var that = this;
     var patt = /key/;//正则表达式
     var alldays = new Array();
+    alldays[0] = new Array(2);
+    alldays[0][0] = "无记录";
+    alldays[0][1] = "grid";
     var j=1;
     for (var i = 0; i < allkeys.length; i++) {
      // console.log(allkeys[i]);
@@ -23,6 +26,7 @@ Page({
        // alldays[j] = allkeys[i].replace(patt,'');
        alldays[j] = new Array(2);
        alldays[j][0] = allkeys[i].replace(patt, '');
+       alldays[j][1] = 'noemotion';
         j++;
       }
     };
@@ -46,9 +50,6 @@ Page({
         // Do something when catch error
       }
     }
-    alldays[0] = new Array(2);
-    alldays[0][0] = "无记录";
-    alldays[0][1] = "grid";
     //console.log(alldays);
     that.setData({
         alldays:alldays,

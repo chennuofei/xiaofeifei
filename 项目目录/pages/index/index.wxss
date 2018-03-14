@@ -45,13 +45,28 @@ page {
   position: absolute;
   height: 38px;
   width: 70px;
-  top:78%;
+  top:73%;
   text-align: center;
   background-color: #383838;
   color: white;
   font-size: 16px;
   border-radius: 15px;
   opacity: 0.7;
+ 
+}
+
+ .button2{
+  position: absolute;
+  height: 38px;
+  width: 70px;
+  top:83%;
+  text-align: center;
+  background-color: #383838;
+  color: white;
+  font-size: 16px;
+  border-radius: 15px;
+  opacity: 0.7;
+ 
 }
 
 .settingimage{
@@ -59,6 +74,7 @@ page {
   height: 32px;
   width: 32px;
   top: 91%;
+  
 }
 .backgroudfortext{
   opacity: 0.5;
@@ -82,4 +98,23 @@ page {
   
   color: white;
   opacity: 0.5;
+}
+
+.jinian{
+
+  position: absolute;
+  
+  text-align: center;
+  color: white; 
+}
+
+.shuohua1{
+  position:static;
+
+  margin-top: 160px;
+}
+.shuohua2{
+  position:static;
+
+  margin-top:20px;
 }

@@ -7,6 +7,8 @@ Page({
   data: {
     emotion:"",
     summarize:"",
+    screenHeight: '',
+    screenWidth: '',
   },
 
   /**
@@ -56,6 +58,16 @@ Page({
           };
       } catch (e) {
       };
+
+
+      wx.getSystemInfo({
+        success: function (res) {
+          that.setData({
+            screenHeight: res.windowHeight,
+            screenWidth: res.windowWidth,
+          })
+        },
+      });
   },
 
   /**

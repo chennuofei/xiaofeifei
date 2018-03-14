@@ -39,6 +39,9 @@ Page({
     animationtime4:[],
     animationtime5:[],
     animationspecail:[],
+
+    screenHeight: '',
+    screenWidth: '',
   },
 
   onLoad: function () {
@@ -69,7 +72,17 @@ Page({
      }
    }catch(e){
 
-   }
+   };
+
+   
+   wx.getSystemInfo({
+     success: function (res) {
+       that.setData({
+         screenHeight: res.windowHeight,
+         screenWidth: res.windowWidth,
+       })
+     },
+   });
   },
 
   bindChange: function (e) {

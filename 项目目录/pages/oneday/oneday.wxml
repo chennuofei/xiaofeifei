@@ -5,7 +5,10 @@
       <view class=" viewbymyself" >
         <text class='title'>当天总结</text>
         <scroll-view scroll-y="true" style='height:200px' class='needtodoview'>{{summarize}}</scroll-view>
+       
       </view>
-
-    <image class='image2' src='{{emotion}}'></image>
+      
+      
+      <image class='image2' src='{{emotion}}'></image>
+   
 </view>

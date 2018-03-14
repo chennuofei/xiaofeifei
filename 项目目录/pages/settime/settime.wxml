@@ -1,11 +1,12 @@
-<view >
+<view  style=' background:url("https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af611c47b827d67c95ce012231e8d02f&auto=format&fit=crop&w=500&q=60");-webkit-background-size:cover;height:{{screenHeight}}px;width:{{screenWidth}}px; '>
+  
   <view class='view' animation='{{animationtime2}}'>任务1时间段：{{time1}}~{{time2}}</view>
   <view class='view' animation='{{animationtime2}}'>任务2时间段：{{time2}}~{{time3}}</view>
   <view class='view' animation='{{animationtime4}}'>任务3时间段：{{time3}}~{{time4}}</view>
   <view class='view' animation='{{animationspecail}}'>任务4时间段：{{time4}}~{{time5}}</view>
   <view class='view' animation='{{animationtime5}}'>总结时间段：{{time5}}~{{time6}}/0</view>
   <view class='view'> 睡觉时间段：{{time6}}/0~{{time1}}</view>
-  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class='picker'>
+  <picker-view indicator-style="height: 50px;" value="{{value}}" bindchange="bindChange" class='picker' mask-style="opacity:0">
     <picker-view-column>
       <view wx:for="{{time2s}}" style="line-height: 50px">{{item}}</view>
     </picker-view-column>
@@ -16,4 +17,5 @@
       <view wx:for="{{time5s}}" style="line-height: 50px">{{item}}</view>
     </picker-view-column>
   </picker-view>
+
 </view>

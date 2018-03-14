@@ -7,6 +7,8 @@ Page({
   data: {
     witchchecked:false,
     huancun:0,
+    screenHeight: '',
+    screenWidth: '',
   },
 
   /**
@@ -31,7 +33,16 @@ Page({
       })
     }catch(e){
 
-    }
+    };
+
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          screenHeight: res.windowHeight,
+          screenWidth: res.windowWidth,
+        })
+      },
+    });
   },
 
   /**

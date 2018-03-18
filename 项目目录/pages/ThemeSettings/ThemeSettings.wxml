@@ -1,0 +1,14 @@
+<!--pages/ThemeSettings/ThemeSettings.wxml-->
+<view class='page' style='background:url("{{backgroundpicture}}");-webkit-background-size:cover;z-index:0'>
+       
+       <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px;'   src="../../resources/localbackgroundpicture1.jpg" bindtap='choosebackgroundpicture1'></image>
+      
+      <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px'  src="../../resources/localbackgroundpicture2.jpg" bindtap='choosebackgroundpicture2'></image>
+      <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px'  src="../../resources/localbackgroundpicture3.jpg" bindtap='choosebackgroundpicture3'></image>
+      <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px'  src="../../resources/localbackgroundpicture4.jpg" bindtap='choosebackgroundpicture4'></image>
+      <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px'  src="../../resources/localbackgroundpicture5.jpg" bindtap='choosebackgroundpicture5'></image>
+      <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px'  src="../../resources/localbackgroundpicture6.jpg" bindtap='choosebackgroundpicture6'></image>
+      <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px'  src="../../resources/localbackgroundpicture7.jpg" bindtap='choosebackgroundpicture7'></image>
+      <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px'  src="../../resources/localbackgroundpicture8.jpg" bindtap='choosebackgroundpicture8'></image>
+</view>
+

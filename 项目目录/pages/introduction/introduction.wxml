@@ -1,5 +1,5 @@
 <!--pages/introduction/introduction.wxml-->
-<view  style=' background:url("https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af611c47b827d67c95ce012231e8d02f&auto=format&fit=crop&w=500&q=60");-webkit-background-size:cover;height:{{screenHeight}}px;width:{{screenWidth}}px;'>
+<view  style=' background:url("{{backgroundpicture}}");-webkit-background-size:cover;height:{{screenHeight}}px;width:{{screenWidth}}px;'>
   <scroll-view scroll-y class='back' style="height:{{screenHeight}}px">
     <view class="weui-article__h1">关于一天任务小程序</view>
             <view class="weui-article__section">

@@ -161,7 +161,7 @@ function change1(that){
 //  * 一秒钟后开始浮现
 
 setTimeout(function(){
-  for (var i = 0; i <= 0.7; i += 0.01) {
+  for (var i = 0; i <= 0.8; i += 0.01) {
     var j = i;
     try {
       that.setData({
@@ -179,7 +179,7 @@ setTimeout(function(){
  *
  */try {
     setTimeout(function () {
-      for (var i = 0.7; i >= 0;i-= 0.01) {
+      for (var i = 0.8; i >= 0;i-= 0.01) {
         var j = i;
         try {
           //  setTimeout(function () {
@@ -204,12 +204,12 @@ setTimeout(function(){
   };
 };
 /**
- * 悼念词小时候主界面浮现
+ * 悼念词消失后主界面浮现
  */
 function change2(that){
  
     setTimeout(function(){
-      for (var i =0; i <= 0.9; i += 0.01) {
+      for (var i =0; i <= 0.95; i += 0.01) {
     
         var j = i;
         try {
@@ -226,10 +226,10 @@ function change2(that){
            * 当主界面基本现形后才花园。避免在手机上可能出现的画布透明值不受控制的问题
            */
           console.log(that.data.opa2);
-          if(that.data.opa2>=0.88){
+          if(that.data.opa2>=0.94){
             drawallcircle(that);
           }
-          sleep(60);
+          sleep(35);
         } catch (e) {
 
         };
@@ -253,6 +253,7 @@ function drawallcircle(that) {
   that.drawCircle();
 };
 
+
 Page({
   /**
    * 页面的初始数据
@@ -268,6 +269,9 @@ Page({
      opa:0,
      opa2:0,
      circleblack:true,
+//初始背景图设置为backgroundpicture1
+     backgroundpicture:'https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af611c47b827d67c95ce012231e8d02f&auto=format&fit=crop&w=500&q=60',
+     backgroundpictureinf:'backgroundpicture1',
   },
   //圆形进度条所需函数
   drawCircle: function () {
@@ -344,7 +348,9 @@ Page({
      }
     }catch(e){
 
-    }
+    };
+
+
   },
   onLoad: function () {
     var that = this;
@@ -359,9 +365,24 @@ Page({
     countdown(that);
     change1(that);
     change2(that);
+
     
   },
   
+  /**
+     * 生命周期函数--监听页面显示
+     */
+  onShow: function () {
+
+  var that = this;
+  var util = require('../../utils/util.js');
+/**
+ * 设置主题
+ */
+    util.SetTheme(that);
+    
+  },
+
   toastzongjie:function(){
      wx.navigateTo({
       url: '../../pages/result/result?',

@@ -1,4 +1,4 @@
-<view class='page' style='background:url("https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af611c47b827d67c95ce012231e8d02f&auto=format&fit=crop&w=500&q=60");-webkit-background-size:cover;height:{{screenHeight}}px;width:{{screenWidth}}px;'>
+<view class='page' style='background:url("{{backgroundpicture}}");-webkit-background-size:cover;height:{{screenHeight}}px;width:{{screenWidth}}px;'>
 <view class="weui-cell weui-cell_access badgeborder" bindtap='introduction'>
   <view class="weui-cell__bd" >
     <view style="display: inline-block; vertical-align: middle" >小程序简介</view>
@@ -27,6 +27,14 @@
 <view class="weui-cell weui-cell_access badgeborder" bindtap='history'>
   <view class="weui-cell__bd" >
     <view style="display: inline-block; vertical-align: middle" >以前的日子</view>
+  </view>
+   <view class="weui-cell__ft weui-cell__ft_in-access" ></view>
+  
+</view>
+
+<view class="weui-cell weui-cell_access badgeborder" bindtap='ThemeSettings'>
+  <view class="weui-cell__bd" >
+    <view style="display: inline-block; vertical-align: middle" >主题设置</view>
   </view>
    <view class="weui-cell__ft weui-cell__ft_in-access" ></view>
   

@@ -8,7 +8,8 @@
     "pages/introduction/introduction",
     "pages/settime/settime",
     "pages/history/history",
-    "pages/oneday/oneday"
+    "pages/oneday/oneday",
+    "pages/ThemeSettings/ThemeSettings"
   ],
   "window":{
     "backgroundTextStyle":"light",

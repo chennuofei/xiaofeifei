@@ -1,6 +1,6 @@
 <!--pages/oneday/oneday.wxml-->
 
-<view class='page'style='width:{{screenWidth}}px;height:{{screenHeight}}px;background:url("https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af611c47b827d67c95ce012231e8d02f&auto=format&fit=crop&w=500&q=60");-webkit-background-size:cover;'>
+<view class='page'style='width:{{screenWidth}}px;height:{{screenHeight}}px;background:url("{{backgroundpicture}}");-webkit-background-size:cover;'>
     
       <view class=" viewbymyself" >
         <text class='title'>当天总结</text>

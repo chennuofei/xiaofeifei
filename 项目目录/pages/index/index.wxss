@@ -110,11 +110,9 @@ page {
 
 .shuohua1{
   position:static;
-
   margin-top: 160px;
 }
 .shuohua2{
   position:static;
-
   margin-top:20px;
 }

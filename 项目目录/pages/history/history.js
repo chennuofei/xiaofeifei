@@ -22,7 +22,7 @@ Page({
     alldays[0] = new Array(2);
     alldays[0][0] = "无记录";
     alldays[0][1] = "grid";
-    var j=1;
+    var j=0;
     for (var i = 0; i < allkeys.length; i++) {
      // console.log(allkeys[i]);
       if (allkeys[i].search(patt)>=0){
@@ -34,7 +34,7 @@ Page({
       }
     };
 
-    for(var i=1;i<alldays.length;i++){
+    for(var i=0;i<alldays.length;i++){
       try {
         var value = wx.getStorageSync(alldays[i][0]+'emotion')
         if (value=='sad') {

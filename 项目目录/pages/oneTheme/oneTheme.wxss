@@ -1,0 +1,23 @@
+/* pages/oneTheme/oneTheme.wxss */
+.page{
+position: fixed;
+align-content: center;
+}
+
+
+/*
+要想横向滚动，首先要先把子元素设置成一行，发现float不能用
+
+要对子元素进行display:inline-block ,容器进行 white-space: nowrap;
+*/
+
+.scroll-view{
+white-space: nowrap;
+ display: flex ;
+ /*不换行*/
+
+}
+.image{
+  /*这个用来使得元素成一排显示，具体百度*/
+ display: inline-block;
+}

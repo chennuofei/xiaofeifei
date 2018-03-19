@@ -1,0 +1,68 @@
+<!--pages/oneTheme/oneTheme.wxml-->
+<view class='page' style='width:{{screenWidth}}px;height:{{screenHeight}}px;'>
+
+<!--scroll-view scroll-x="true" style=" white-space: nowrap; display: flex;" >
+<  !--display: inline-block>
+  <view style="background: red; width: 350px; height: 680px; display: inline-block;" ></view>
+  <view style="background: green; width: 350px; height: 680px; display: inline-block;"></view>
+  <view style="background: blue; width: 350px; height: 680px; display: inline-block;"></view>
+  <view style="background: yellow; width: 350px; height: 680px; display: inline-block;"></view>
+</scroll-view-->
+
+<scroll-view wx:if="{{localbackgroundpicture=='localbackgroundpicture1'}}" scroll-x="true"  style="white-space: nowrap; display: flex;">
+    <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture1.1.jpg' mode='aspectFit' ></image>
+      <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture1.2.jpg' mode='aspectFit' ></image>
+      <image style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture1.3.jpg' mode='aspectFit' ></image>
+</scroll-view>
+
+
+<scroll-view wx:if="{{localbackgroundpicture=='localbackgroundpicture2'}}" scroll-x="true"  style="white-space: nowrap; display: flex;">
+    <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture2.1.jpg' mode='aspectFit' ></image>
+      <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture2.2.jpg' mode='aspectFit' ></image>
+      <image style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture2.3.jpg' mode='aspectFit' ></image>
+</scroll-view>
+
+
+<scroll-view wx:if="{{localbackgroundpicture=='localbackgroundpicture3'}}" scroll-x="true"  style="white-space: nowrap; display: flex;">
+    <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture3.1.jpg' mode='aspectFit' ></image>
+      <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture3.2.jpg' mode='aspectFit' ></image>
+      <image style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture3.3.jpg' mode='aspectFit' ></image>
+</scroll-view>
+
+
+<scroll-view wx:if="{{localbackgroundpicture=='localbackgroundpicture4'}}" scroll-x="true"  style="white-space: nowrap; display: flex;">
+    <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture4.1.jpg' mode='aspectFit' ></image>
+      <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture4.2.jpg' mode='aspectFit' ></image>
+      <image style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture4.3.jpg' mode='aspectFit' ></image>
+</scroll-view>
+
+
+<scroll-view wx:if="{{localbackgroundpicture=='localbackgroundpicture5'}}" scroll-x="true"  style="white-space: nowrap; display: flex;">
+    <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture5.1.jpg' mode='aspectFit' ></image>
+      <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture5.2.jpg' mode='aspectFit' ></image>
+      <image style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture5.3.jpg' mode='aspectFit' ></image>
+</scroll-view>
+
+
+<scroll-view wx:if="{{localbackgroundpicture=='localbackgroundpicture6'}}" scroll-x="true"  style="white-space: nowrap; display: flex;">
+    <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture6.1.jpg' mode='aspectFit' ></image>
+      <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture6.2.jpg' mode='aspectFit' ></image>
+      <image style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture6.3.jpg' mode='aspectFit' ></image>
+</scroll-view>
+  
+
+<scroll-view wx:if="{{localbackgroundpicture=='localbackgroundpicture7'}}" scroll-x="true"  style="white-space: nowrap; display: flex;">
+    <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture7.1.jpg' mode='aspectFit' ></image>
+      <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture7.2.jpg' mode='aspectFit' ></image>
+      <image style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture7.3.jpg' mode='aspectFit' ></image>
+</scroll-view>
+
+
+<scroll-view wx:if="{{localbackgroundpicture=='localbackgroundpicture8'}}" scroll-x="true"  style="white-space: nowrap; display: flex;">
+    <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture8.1.jpg' mode='aspectFit' ></image>
+      <image  style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture8.2.jpg' mode='aspectFit' ></image>
+      <image style="width: 351px; height:552px; display: inline-block" src='../../resources/localbackgroundpicture8.3.jpg' mode='aspectFit' ></image>
+</scroll-view>
+
+ <button bindtap='choosebackgroundpicture'>选择</button>
+</view>

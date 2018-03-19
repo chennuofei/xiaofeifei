@@ -9,7 +9,8 @@
     "pages/settime/settime",
     "pages/history/history",
     "pages/oneday/oneday",
-    "pages/ThemeSettings/ThemeSettings"
+    "pages/ThemeSettings/ThemeSettings",
+    "pages/oneTheme/oneTheme"
   ],
   "window":{
     "backgroundTextStyle":"light",

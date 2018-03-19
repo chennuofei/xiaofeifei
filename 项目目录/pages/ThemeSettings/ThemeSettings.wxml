@@ -1,14 +1,23 @@
-<!--pages/ThemeSettings/ThemeSettings.wxml-->
-<view class='page' style='background:url("{{backgroundpicture}}");-webkit-background-size:cover;z-index:0'>
-       
-       <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px;'   src="../../resources/localbackgroundpicture1.jpg" bindtap='choosebackgroundpicture1'></image>
-      
-      <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px'  src="../../resources/localbackgroundpicture2.jpg" bindtap='choosebackgroundpicture2'></image>
-      <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px'  src="../../resources/localbackgroundpicture3.jpg" bindtap='choosebackgroundpicture3'></image>
-      <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px'  src="../../resources/localbackgroundpicture4.jpg" bindtap='choosebackgroundpicture4'></image>
-      <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px'  src="../../resources/localbackgroundpicture5.jpg" bindtap='choosebackgroundpicture5'></image>
-      <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px'  src="../../resources/localbackgroundpicture6.jpg" bindtap='choosebackgroundpicture6'></image>
-      <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px'  src="../../resources/localbackgroundpicture7.jpg" bindtap='choosebackgroundpicture7'></image>
-      <image style='width:{{imagewidth}}px;height:{{imageheight}}px;margin:{{margin}}px'  src="../../resources/localbackgroundpicture8.jpg" bindtap='choosebackgroundpicture8'></image>
+<view  style='-webkit-background-size:cover;height:{{screenHeight}}px;width:{{screenWidth}}px;'>
+   <scroll-view scroll-y class='back' style="height:{{screenHeight}}px">
+    <view class="page__hd" >
+    </view>
+    <view class="page__bd" >
+        <view class="weui-grids" style=' text-align: center;'>
+            <block wx:for="{{grids}}" wx:for-item="oneTheme" wx:key="*this"  >
+                <navigator url="../../pages/oneTheme/oneTheme?key={{oneTheme.localbackgroundpicture}}" class="weui-grid" hover-class="weui-grid_active">
+                   <image style='width:{{imagewidth}}px;height:{{imageheight}}px;'   src="../../resources/{{oneTheme.localbackgroundpicture}}.jpg" ></image>
+                    <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture1'}}"class="weui-grid__label">流星</view>
+                     <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture2'}}"class="weui-grid__label">星空</view>
+                      <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture3'}}"class="weui-grid__label">银河</view>
+                       <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture4'}}"class="weui-grid__label">云层</view>
+                        <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture5'}}"class="weui-grid__label">极光</view>
+                         <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture6'}}"class="weui-grid__label">山野</view>
+                          <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture7'}}"class="weui-grid__label">晨曦</view>
+                           <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture8'}}"class="weui-grid__label">大树</view>
+                </navigator>
+            </block>
+        </view>
+    </view>
+    </scroll-view>
 </view>
-

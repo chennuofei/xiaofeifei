@@ -7,7 +7,9 @@ Page({
   data: {
     screenHeight: '',
     screenWidth: '',
-    localbackgroundpicture:'',
+    oneTheme:'',
+    buttonzhuangtai:'使用',
+    picture:'',
   },
 
   /**
@@ -25,9 +27,12 @@ Page({
     });
 
   //获得页面转移信息中的localbackgroundpicture
+    var choosepicture = options.key
   that.setData({
-    localbackgroundpicture:options.key
-  })
+    oneTheme: choosepicture,
+  });
+
+  console.log(choosepicture);
   },
 
   /**
@@ -41,7 +46,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this;
+    //缓存中背景图片信息key值设为picture
+    var setpicture = wx.getStorageSync('piture');
+    that.setData({
+      picture: 'local' + setpicture,
+    })
+
+    // console.log("that.data.picture");
+    // console.log(that.data.picture);
   },
 
   /**
@@ -84,10 +97,13 @@ Page({
    */
   choosebackgroundpicture: function () {
     var that = this;
-    switch (that.data.localbackgroundpicture){
+    that.setData({
+      buttonzhuangtai: '✔使用中', 
+    });
+    switch (that.data.oneTheme){
       case 'localbackgroundpicture1':
         try {
-          console.log('sssss');
+        //  console.log('sssss');
           wx.setStorageSync('piture', 'backgroundpicture1');
         } catch (e) {
 
@@ -95,7 +111,7 @@ Page({
        break; 
       case 'localbackgroundpicture2':
         try {
-          console.log('sssss');
+        //  console.log('sssss');
           wx.setStorageSync('piture', 'backgroundpicture2');
         } catch (e) {
 
@@ -103,7 +119,7 @@ Page({
         break; 
       case 'localbackgroundpicture3':
         try {
-          console.log('sssss');
+       //   console.log('sssss');
           wx.setStorageSync('piture', 'backgroundpicture3');
         } catch (e) {
 
@@ -111,7 +127,7 @@ Page({
         break; 
       case 'localbackgroundpicture4':
         try {
-          console.log('sssss');
+     //     console.log('sssss');
           wx.setStorageSync('piture', 'backgroundpicture4');
         } catch (e) {
 
@@ -119,7 +135,7 @@ Page({
         break; 
       case 'localbackgroundpicture5':
         try {
-          console.log('sssss');
+      //    console.log('sssss');
           wx.setStorageSync('piture', 'backgroundpicture5');
         } catch (e) {
 
@@ -127,7 +143,7 @@ Page({
         break; 
       case 'localbackgroundpicture6':
         try {
-          console.log('sssss');
+       //   console.log('sssss');
           wx.setStorageSync('piture', 'backgroundpicture6');
         } catch (e) {
 
@@ -135,7 +151,7 @@ Page({
         break; 
       case 'localbackgroundpicture7':
         try {
-          console.log('sssss');
+       //   console.log('sssss');
           wx.setStorageSync('piture', 'backgroundpicture7');
         } catch (e) {
 
@@ -143,7 +159,7 @@ Page({
         break; 
       case 'localbackgroundpicture8':
         try {
-          console.log('sssss');
+       //   console.log('sssss');
           wx.setStorageSync('piture', 'backgroundpicture8');
         } catch (e) {
 

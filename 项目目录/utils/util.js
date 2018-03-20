@@ -27,59 +27,14 @@ function SetTheme(that) {
   //读取缓存获取背景图片设置信息并从全局变量中获取图片链接
   //这一部分要放在onShow函数里 
 
-  /**
-   * 将该页面原背景信息存入backgroundinf中，用来判断是否需要刷新改变
-   */
-
-  if (that.data.backgroundpicture == getApp().globalData.backgroundpicture1) {
-    that.setData({
-      backgroundpictureinf: 'backgroundpicture1',
-    })
-  }
-  if (that.data.backgroundpicture == getApp().globalData.backgroundpicture2) {
-    that.setData({
-      backgroundpictureinf: 'backgroundpicture2',
-    })
-  }
-  if (that.data.backgroundpicture == getApp().globalData.backgroundpicture3) {
-    that.setData({
-      backgroundpictureinf: 'backgroundpicture3',
-    })
-  }
-  if (that.data.backgroundpicture == getApp().globalData.backgroundpicture4) {
-    that.setData({
-      backgroundpictureinf: 'backgroundpicture4',
-    })
-  }
-  if (that.data.backgroundpicture == getApp().globalData.backgroundpicture5) {
-    that.setData({
-      backgroundpictureinf: 'backgroundpicture5',
-    })
-  }
-  if (that.data.backgroundpicture == getApp().globalData.backgroundpicture6) {
-    that.setData({
-      backgroundpictureinf: 'backgroundpicture6',
-    })
-  }
-  if (that.data.backgroundpicture == getApp().globalData.backgroundpicture7) {
-    that.setData({
-      backgroundpictureinf: 'backgroundpicture7',
-    })
-  }
-  if (that.data.backgroundpicture == getApp().globalData.backgroundpicture8) {
-    that.setData({
-      backgroundpictureinf: 'backgroundpicture8',
-    })
-  }
-
   try {
     //缓存中背景图片信息key值设为picture
     var picture = wx.getStorageSync('piture');
-    console.log('picture');
-    console.log(picture);
-    console.log('that.data.backgrondpictureinf');
-    console.log(that.data.backgroundpictureinf);
-    if (picture && picture != that.data.backgroundpictureinf) {
+    // console.log('picture');
+    // console.log(picture);
+    // console.log('that.data.backgrondpictureinf');
+    // console.log(that.data.backgroundpictureinf);
+    if (picture) {
       switch (picture) {
         case 'backgroundpicture1':
           that.setData({
@@ -132,10 +87,20 @@ function SetTheme(that) {
         default:
           that.setData({
             backgroundpicture: getApp().globalData.backgroundpicture1,
-            backgrondpictureinf: 'backgroundpicture1'
           });
           break;
       };
+    }else{
+      //缓存信息有错误则将背景图片设置成初始状态
+      console.log('缓存无数据，进行初始化');
+      try {
+        wx.setStorageSync('piture', 'backgroundpicture1');
+      } catch (e) {
+
+      };
+      that.setData({
+        backgroundpicture: getApp().globalData.backgroundpicture1,
+      });
     };
   } catch (e) {
     //缓存信息有错误则将背景图片设置成初始状态

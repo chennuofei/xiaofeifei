@@ -44,7 +44,7 @@
       青春因奋斗而永驻心田     
       </text>
       <text class='text2 ' >
-      让时光只能改变你的容颜
+      青春因奋斗而永驻心田
       </text>
     </view>
     <button class='button'  bindtap="toastsleep">晚安</button>
@@ -54,10 +54,10 @@
   <block wx:else>
     <view class='article-sp-area1 '>
       <text class='text1 ' >
-      世界再无霍金     
+      青春因奋斗而永驻心田     
       </text>
       <text class='text2 ' >
-      时间永留简史
+      青春因奋斗而永驻心田
       </text>
     </view>
     <button class='button ' bindtap="toastwhattodo">任务</button>
@@ -72,10 +72,16 @@
 </view>
 
 </view>
+
+
 <view  class='jinian'style="height:{{screenHeight/2}}px;width:{{screenWidth}}px;opacity:{{opa}}" hidden='{{hide1}}'>
- <view class='shuohua1'>世界再无霍金</view>
- <view class='shuohua2'>时间永留简史</view>
- <view class='shuohua2'>如这颗流星一般</view>
- <view class='shuohua2'>属于宇宙星辰</view>
- <view class='shuohua2'>永远璀璨</view>
+ <view class='shuohua1'>我们分担寒潮、风雷、霹雳</view>
+ <view class='shuohua2'>我们共享雾霭流岚、虹霓</view>
+ <view class='shuohua2'>仿佛永远分离，却又终身相依</view>
+ <view class='shuohua2'>这才是伟大的爱情</view>
+ <view class='shuohua2'>坚贞就在这里</view>
+ <view class='shuohua2'>不仅爱你伟岸的身躯</view>
+ <view class='shuohua2'>也爱你坚持的位置，脚下的土地</view>
+  
+ 
 </view>

@@ -4,17 +4,19 @@
     </view>
     <view class="page__bd" >
         <view class="weui-grids" style=' text-align: center;'>
-            <block wx:for="{{grids}}" wx:for-item="oneTheme" wx:key="*this"  >
-                <navigator url="../../pages/oneTheme/oneTheme?key={{oneTheme.localbackgroundpicture}}" class="weui-grid" hover-class="weui-grid_active">
-                   <image style='width:{{imagewidth}}px;height:{{imageheight}}px;'   src="../../resources/{{oneTheme.localbackgroundpicture}}.jpg" ></image>
-                    <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture1'}}"class="weui-grid__label">流星</view>
-                     <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture2'}}"class="weui-grid__label">星空</view>
-                      <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture3'}}"class="weui-grid__label">银河</view>
-                       <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture4'}}"class="weui-grid__label">云层</view>
-                        <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture5'}}"class="weui-grid__label">极光</view>
-                         <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture6'}}"class="weui-grid__label">山野</view>
-                          <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture7'}}"class="weui-grid__label">晨曦</view>
-                           <view wx:if="{{oneTheme.localbackgroundpicture=='localbackgroundpicture8'}}"class="weui-grid__label">大树</view>
+            <block  wx:for="{{grid}}" wx:for-item="oneTheme" wx:key="*this"  >
+                <navigator url="../../pages/oneTheme/oneTheme?key={{oneTheme}}" class="weui-grid" hover-class="weui-grid_active">
+                   <image style='width:{{imagewidth}}px;height:{{imageheight}}px;'   src="../../resources/{{oneTheme}}.jpg" ></image>
+                    <view wx:if="{{oneTheme=='localbackgroundpicture1'}}"class="weui-grid__label">流星</view>
+                    <view wx:if="{{oneTheme=='localbackgroundpicture2'}}"class="weui-grid__label">星空</view>
+                    <view wx:if="{{oneTheme=='localbackgroundpicture3'}}"class="weui-grid__label">银河</view>
+                    <view wx:if="{{oneTheme=='localbackgroundpicture4'}}"class="weui-grid__label">云层</view>
+                    <view wx:if="{{oneTheme=='localbackgroundpicture5'}}"class="weui-grid__label">极光</view>
+                    <view wx:if="{{oneTheme=='localbackgroundpicture6'}}"class="weui-grid__label">山野</view>
+                    <view wx:if="{{oneTheme=='localbackgroundpicture7'}}"class="weui-grid__label">晨曦</view>
+                    <view wx:if="{{oneTheme=='localbackgroundpicture8'}}"class="weui-grid__label">大树</view>
+                    <image wx:if="{{oneTheme== picture}}" class='yes' src='../../resources/yes-24px.png'></image>
+                    <image wx:if="{{oneTheme!= picture}}" class='yes' src='../../resources/yes-24px.png' style='opacity:0;'></image>
                 </navigator>
             </block>
         </view>

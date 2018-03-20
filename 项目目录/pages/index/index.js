@@ -198,9 +198,9 @@ setTimeout(function(){
       };
     }
       , 4000);
-    console.og('sssss2');
+   // console.og('sssss2');
   } catch (e) {
-    console.log('saaaa');
+   // console.log('saaaa');
   };
 };
 /**
@@ -225,7 +225,7 @@ function change2(that){
           /**
            * 当主界面基本现形后才花园。避免在手机上可能出现的画布透明值不受控制的问题
            */
-          console.log(that.data.opa2);
+        //  console.log(that.data.opa2);
           if(that.data.opa2>=0.94){
             drawallcircle(that);
           }
@@ -270,8 +270,7 @@ Page({
      opa2:0,
      circleblack:true,
 //初始背景图设置为backgroundpicture1
-     backgroundpicture:'https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af611c47b827d67c95ce012231e8d02f&auto=format&fit=crop&w=500&q=60',
-     backgroundpictureinf:'backgroundpicture1',
+     backgroundpicture:'',
   },
   //圆形进度条所需函数
   drawCircle: function () {
@@ -364,9 +363,7 @@ Page({
     });
     countdown(that);
     change1(that);
-    change2(that);
-
-    
+    change2(that);   
   },
   
   /**

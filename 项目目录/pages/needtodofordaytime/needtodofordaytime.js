@@ -97,7 +97,7 @@ Page({
        },
      }) ;
 
-     console.log(that.data.screenHeight);
+     //console.log(that.data.screenHeight);
   },
 
   /**

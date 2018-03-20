@@ -10,8 +10,9 @@ page,
 .weui-tab__content{
   /*s
   这里height: 92%;使得三个页面允许上下轻微滑动
+  上下滑动会有bug，textarea中的文字不会滑动
   */
-  height: 92%;
+  height: 85%;
   width: 100%;
     padding-top: 60px;
     text-align: center;
@@ -30,9 +31,10 @@ page,
   color: whitesmoke;
 }
 .textarea1{
+   position: absolute;
    margin: auto;
   width: 85%;
-  height: 85%;
+  height: 90%;
   font-size: 15px;
    overflow: hidden;
    text-overflow: ellipsis;
@@ -43,6 +45,7 @@ page,
 }
 
 .textarea2{
+  position: absolute;
    margin: auto;
   width: 85%;
   height: 85%;

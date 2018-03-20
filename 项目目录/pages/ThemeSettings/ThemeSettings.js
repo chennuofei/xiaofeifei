@@ -11,17 +11,28 @@ Page({
     screenHeight: '',
     screenWidth: '',
     //初始背景图设置为backgroundpicture1
-    backgroundpicture: 'https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af611c47b827d67c95ce012231e8d02f&auto=format&fit=crop&w=500&q=60',
-    backgroundpictureinf: 'backgroundpicture1',
-    grids:[
-      { "localbackgroundpicture": 'localbackgroundpicture1', "choosebackgroundpicture": 'choosebackgroundpicture1'},
-      { "localbackgroundpicture": 'localbackgroundpicture2', "choosebackgroundpicture": 'choosebackgroundpicture2'},
-      { "localbackgroundpicture": 'localbackgroundpicture3', "choosebackgroundpicture": 'choosebackgroundpicture3'},
-      { "localbackgroundpicture": 'localbackgroundpicture4', "choosebackgroundpicture": 'choosebackgroundpicture4'},
-      { "localbackgroundpicture": 'localbackgroundpicture5', "choosebackgroundpicture": 'choosebackgroundpicture5'},
-      { "localbackgroundpicture": 'localbackgroundpicture6', "choosebackgroundpicture": 'choosebackgroundpicture6'},
-      { "localbackgroundpicture": 'localbackgroundpicture7', "choosebackgroundpicture": 'choosebackgroundpicture7'},
-      { "localbackgroundpicture": 'localbackgroundpicture8', "choosebackgroundpicture": 'choosebackgroundpicture8'}],
+    backgroundpicture: '',
+    // grids:[
+    //   { "localbackgroundpicture": 'localbackgroundpicture1', "choosebackgroundpicture": 'choosebackgroundpicture1'},
+    //   { "localbackgroundpicture": 'localbackgroundpicture2', "choosebackgroundpicture": 'choosebackgroundpicture2'},
+    //   { "localbackgroundpicture": 'localbackgroundpicture3', "choosebackgroundpicture": 'choosebackgroundpicture3'},
+    //   { "localbackgroundpicture": 'localbackgroundpicture4', "choosebackgroundpicture": 'choosebackgroundpicture4'},
+    //   { "localbackgroundpicture": 'localbackgroundpicture5', "choosebackgroundpicture": 'choosebackgroundpicture5'},
+    //   { "localbackgroundpicture": 'localbackgroundpicture6', "choosebackgroundpicture": 'choosebackgroundpicture6'},
+    //   { "localbackgroundpicture": 'localbackgroundpicture7', "choosebackgroundpicture": 'choosebackgroundpicture7'},
+    //   { "localbackgroundpicture": 'localbackgroundpicture8', "choosebackgroundpicture": 'choosebackgroundpicture8'}],
+      grid:[
+        'localbackgroundpicture1',
+        'localbackgroundpicture2',
+        'localbackgroundpicture3',
+        'localbackgroundpicture4',
+        'localbackgroundpicture5',
+        'localbackgroundpicture6',
+        'localbackgroundpicture7',
+        'localbackgroundpicture8',
+      ],
+//用作yes图标显示判定
+      picture:'',
   },
 
   /**
@@ -38,12 +49,12 @@ Page({
           screenHeight: res.windowHeight,
           screenWidth: res.windowWidth,
         });
-        console.log(res.windowWidth); console.log(that.data.imagewidth);
-        console.log(res.windowHeight);
+        // console.log(res.windowWidth); console.log(that.data.imagewidth);
+        // console.log(res.windowHeight);
       },
       
     });
-    
+   
   },
 
   /**
@@ -63,6 +74,11 @@ Page({
      * 设置主题
      */
     util.SetTheme(that);
+    //缓存中背景图片信息key值设为picture
+    var setpicture = wx.getStorageSync('piture');
+    that.setData({
+      picture: 'local' + setpicture,
+    })
   },
 
   /**
